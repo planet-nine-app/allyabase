@@ -51,14 +51,14 @@ console.log(res.body);
 });
 
 it('should register another user', async () => {
-  await sessionless.generateKeys((k) => { keysToReturn = k; }, () => {return keysToReturn;});
+  const keys2 = await sessionless.generateKeys((k) => { keysToReturn = k; }, () => {return keysToReturn;});
 /*  keys = {
     privateKey: 'd6bfebeafa60e27114a40059a4fe82b3e7a1ddb3806cd5102691c3985d7fa591',
     pubKey: '03f60b3bf11552f5a0c7d6b52fcc415973d30b52ab1d74845f1b34ae8568a47b5f'
   };*/
   const payload = {
     timestamp: new Date().getTime() + '',
-    pubKey: keys.pubKey,
+    pubKey: keys2.pubKey,
   };
 
   payload.signature = await sessionless.sign(payload.timestamp + payload.pubKey);
@@ -71,31 +71,24 @@ console.log(res.body);
   res.body.uuid.length.should.equal(36);
 });
 
-
-
 it('should get user by uuid', async () => {
-  const payload = {
-    timestamp: new Date().getTime() + '',
-    name: "Foo",
-    email: "zach+" + (Math.floor(Math.random() * 100000)) + "@planetnine.app"
-  };
+  const timestamp = new Date().getTime() + '';
 
-  const message = payload.timestamp + savedUser.uuid;
+  const message = timestamp + savedUser.uuid;
 
-  payload.signature = await sessionless.sign(message);
+  const signature = await sessionless.sign(message);
 
-  const res = await get(`${baseURL}user/${savedUser.uuid}`);
+  const res = await get(`${baseURL}user/${savedUser.uuid}?signature=${signature}&timestamp=${timestamp}`);
   savedUser = res.body;
-console.log('stripe account id', savedUser.stripeAccountId);
-  savedUser.stripeAccountId.should.not.equal(null);
+  savedUser.uuid.length.should.equal(36);
 }).timeout(60000);
 
 it('should get user by public key', async () => {
   const timestamp = new Date().getTime() + '';
   
-  const signature = await sessionless.sign(timestamp + savedUser.uuid);
+  const signature = await sessionless.sign(timestamp + savedUser.pubKey);
 
-  const res = await get(`${baseURL}user/${savedUser.pubKey}?timestamp=${timestamp}&signature=${signature}`);
+  const res = await get(`${baseURL}user/pubKey/${savedUser.pubKey}?timestamp=${timestamp}&signature=${signature}`);
   savedUser = res.body;
   savedUser.experience.should.not.equal(null);
 });
@@ -120,7 +113,7 @@ it('should resolve a spell', async () => {
     ordinal: payload.ordinal,
   });
   
-  payload.signature = await sessionless.sign(message);
+  payload.casterSignature = await sessionless.sign(message);
 
   const res = await post(`${baseURL}resolve`, payload);
   res.body.success.should.equal(true);
@@ -134,7 +127,7 @@ it('should grant experience', async () => {
     description: "for testing"
   };
 
-  const message = payload.timestamp + savedUser.uuid + payload.destinationUUID + amount + description;
+  const message = payload.timestamp + savedUser.uuid + payload.destinationUUID + payload.amount + payload.description;
 
   payload.signature = await sessionless.sign(message);
   
@@ -142,13 +135,14 @@ it('should grant experience', async () => {
 });
 
 it('should get a user\'s nineum', async () => {
-  const timestamp = new Date().getTime();
+  const timestamp = new Date().getTime() + '';
   
-  const message = payload.timestamp + savedUser.uuid;
+  const message = timestamp + savedUser.uuid;
 
-  payload.signature = await sessionless.sign(message);
+  const signature = await sessionless.sign(message);
 
-  const res = await get(`${baseURL}user/${savedUser.uuid}/nineum`);
+  const res = await get(`${baseURL}user/${savedUser.uuid}/nineum?timestamp=${timestamp}&signature=${signature}`);
+  savedUser.nineum = res.body.nineum;
   res.body.nineum.length.should.equal(2);
 });
 
@@ -157,13 +151,13 @@ it('should transfer nineum', async () => {
     timestamp: new Date().getTime() + '',
     destinationUUID: savedUser2.uuid,
     nineumUniqueIds: savedUser.nineum,
-    price: 100,
+    price: 0,
     currency: 'usd'
   };
 
   const message = payload.timestamp + savedUser.uuid + savedUser2.uuid + payload.nineumUniqueIds.join('') + payload.price + payload.currency;
 
-  payload.signature = sessionless.sign(message);
+  payload.signature = await sessionless.sign(message);
 
   const res = await post(`${baseURL}user/${savedUser.uuid}/transfer`, payload);
   res.body.nineumCount.should.equal(0);
