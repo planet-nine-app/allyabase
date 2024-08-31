@@ -24,29 +24,29 @@ RUN npm install -g nodemon
 
 WORKDIR /usr/src/app/julia/src/server/node
 RUN npm install
-CMD ["nohup", "nodemon", "server.js"]
 
 WORKDIR /usr/src/app/continuebee/src/server/node
 RUN npm install
-CMD ["nohup", "nodemon", "server.js"]
 
 WORKDIR /usr/src/app/joan/src/server/node
 RUN npm install
-CMD ["nohup", "nodemon", "server.js"]
 
 WORKDIR /usr/src/app/pref/src/server/node
 RUN npm install
-CMD ["nohup", "nodemon", "server.js"]
 
 WORKDIR /usr/src/app/bdo/src/server/node
 RUN npm install
-CMD ["nohup", "nodemon", "server.js"]
 
 WORKDIR /usr/src/app/fount/src/server/node
 RUN npm install
-CMD ["nohup", "nodemon", "server.js"]
 
 WORKDIR /usr/src/app/addie/src/server/node
 RUN npm install
-CMD ["nohup", "nodemon", "server.js"]
+
+WORKDIR /usr/src/app
+
+COPY start.sh /usr/src/app/
+RUN chmod +x /usr/src/app/start.sh
+CMD ["./start.sh"]
+
 

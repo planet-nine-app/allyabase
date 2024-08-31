@@ -49,6 +49,9 @@ console.log(res.body);
   res.body.uuid.length.should.equal(36);
 });
 
+/*
+ * uncomment these tests once you have added a processor or two
+ *
 it('should put an account to a processor', async () => {
   const payload = {
     timestamp: new Date().getTime() + '',
@@ -91,6 +94,7 @@ it('should get a payment intent', async () => {
   const res = await post(`${baseURL}user/${savedUser.uuid}/processor/stripe/intent`, payload);
   res.body.paymentIntent.should.not.equal(null);
 });
+*/
 
 it('should delete a user', async () => {
   const timestamp = new Date().getTime() + '';
