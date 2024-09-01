@@ -3,7 +3,7 @@ should();
 import sessionless from 'sessionless-node';
 import superAgent from 'superagent';
 
-const baseURL = 'http://127.0.0.1:3003/';
+const baseURL = process.env.DEV ? 'https://dev.bdo.allyabase.com/' : 'http://127.0.0.1:3003/';
 
 const get = async function(path) {
   console.info("Getting " + path);
@@ -41,7 +41,7 @@ it('should register a user', async () => {
     timestamp: new Date().getTime() + '',
     pubKey: keys.pubKey,
     hash,
-    preferences: {
+    bdo: {
       foo: "bar",
       baz: "bop"
     }

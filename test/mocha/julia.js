@@ -3,7 +3,7 @@ should();
 import sessionless from 'sessionless-node';
 import superAgent from 'superagent';
 
-const baseURL = 'http://127.0.0.1:3000/';
+const baseURL = process.env.DEV ? 'https://dev.julia.allyabase.com/' : 'http://127.0.0.1:3000/';
 //const baseURL = 'https://juliaswitch.com/';
 
 const get = async function(path) {
