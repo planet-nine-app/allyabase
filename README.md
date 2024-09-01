@@ -13,7 +13,7 @@ allyabase is a collection of miniservices[^1], which utilize the [Sessionless][s
 SLAP allows, among other things, for clients to authenticate without sharing any personal information like an email or password.
 One of the most interesting things that this does is it lets you authenticate with the miniservices directly in the same or different ways from different clients.
 
-At the risk of being hyperbolic, this enables [interoperability][ht1].
+At the risk of being hyperbolic, this enables interoperability[ht1].
 If that were all this was about, it'd probably be enough for me to want to work on it. 
 But as it happens, you can build some really cool stuff once you no longer have to worry about user's info and credentials. 
 
