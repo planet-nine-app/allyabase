@@ -70,6 +70,27 @@ allyabase is meant to be _interoperable_ with any service that utilizes public k
 
 * TCB: tasks/todos/reminders/etc
 
+* <name tbd>: Something for forms... not sure how far down the UI road I want this to go
+
+### Running locally
+
+##### Docker
+
+From the root of the project run:
+
+`docker build -t allyabase .`
+
+then:
+
+`docker run -p 2999:2999 -p 3000:3000 -p 3001:3001 -p 3002:3002 -p 3003:3003 -p 3004:3004 -p 3005:3005 -p 3006:3006 allyabase`
+
+This will expose the services on each of these ports. 
+You can then verify they're running by running the tests in `test/mocha` with `mocha addie.js bdo.js continuebee.js fount.js julia.js joan.js pref.js`
+
+##### Testing the dev server
+
+You can run the local tests against the dev server with `DEV=true mocha addie.js bdo.js continuebee.js fount.js julia.js joan.js pref.js`
+
 ### Contributing
 
 Each miniservice has its own contributing guide. 
