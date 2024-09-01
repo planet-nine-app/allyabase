@@ -93,7 +93,7 @@ This project would not be possible without the support and contributions of the 
 [juliachat]: https://www.github.com/planet-nine-app/JuliaChat
 
 [ht1]: ## "In the hierarchy of non-centralized systems it goes decentralized (like blockchain), then federated (like the Fediverse), then interoperable (like cellular networks, or the world wide web). Interoperability was actually the norm in the years before the internet. You don't have to have different pens for different notebooks."
-[ht2]: ## "A bridge language. Like common in DnD. 
+[ht2]: ## "A bridge language. Like common in DnD."
 
 [^1]: "I avoid using the term microservices here because a) they've sort of fallen out of favor, and b) because the allyabase miniservices (and miniservices that may be outside of allyabase) are much more stand alone because of how auth works for them."
 [^2]: "The potential socioeconomic implications of a public cloud of this sort will be discussed in another doc soon."
