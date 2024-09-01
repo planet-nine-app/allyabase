@@ -1,6 +1,6 @@
 # allyabase
 
-![All your base are belong to us](https://github.com/planet-nine-app/allyabase/blob/main/all-your-base.jpg)
+![All your base are belong to us](https://github.com/planet-nine-app/allyabase/blob/main/site/images/all-your-base.jpg)
 
 **allyabase** (named for an early oughts internet meme, which featured the quirkily translated game Zero Wing) is a playful jab at the BaaS (backend as a service) platforms in name, and a serious attempt at providing public backend infrastructure in form.
 In addition to referencing a time when the internet was weirder, it is meant as a (playful) reminder that BaaS is a thinly veiled data collecting mechanism where you get to pay for the privelage of handing your user's habits to advertisers for them to profit off of.
