@@ -181,7 +181,7 @@ it('should delete association', async () => {
 
   const res = await _delete(`${baseURL}associated/${savedUser2.uuid}/user/${savedUser.uuid}`, payload);
   const noKey = res.body.keys.interactingKeys[savedUser2.uuid] === undefined;
-  noKey.should.equal(true);;
+  noKey.should.equal(true);
 });
 
 it('should delete a user', async () => {

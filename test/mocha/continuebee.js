@@ -46,6 +46,7 @@ it('should register a user', async () => {
 
   const res = await post(`${baseURL}user/create`, payload);
   savedUser = res.body;
+console.log('STATUS:', res.status);
   res.body.userUUID.length.should.equal(36);
 });
 

@@ -118,8 +118,8 @@ it('should get global preferences', async () => {
 
   const signature = await sessionless.sign(timestamp + uuid + hash);
 
-  const res = await get(`${baseURL}user/${uuid}/global/preferences?timestamp=${timestamp}&signature=${signature}`);
-console.log(res.body);
+  const res = await get(`${baseURL}user/${uuid}/global/preferences?timestamp=${timestamp}&hash=${hash}&signature=${signature}`);
+console.log('GLOBAL', res.body);
   res.body.preferences.baz.should.equal("updated");   
 });
 
@@ -132,6 +132,6 @@ it('should delete a user', async () => {
 
 
   const res = await _delete(`${baseURL}user/delete`, payload);
-console.log(res.body);
+console.log('DELETE', res.body);
   res.status.should.equal(200);
 });

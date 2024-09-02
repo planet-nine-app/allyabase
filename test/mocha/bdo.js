@@ -85,7 +85,7 @@ it('should get bdo', async () => {
   const signature = await sessionless.sign(timestamp + uuid + hash);
 
   const res = await get(`${baseURL}user/${uuid}/bdo?timestamp=${timestamp}&signature=${signature}&hash=${hash}`);
-console.log(res.body);
+console.log('GET BDO', res.body);
   res.body.bdo.baz.should.equal("updated");   
 });
 

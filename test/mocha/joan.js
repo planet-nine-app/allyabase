@@ -63,10 +63,11 @@ it('should register a user', async () => {
 it('should get uuid, and save new pubKey', async () => {
   const timestamp = new Date().getTime() + '';
   const hash = digest;
+  keys = await sessionless.generateKeys(() => { return keys; }, () => {return keys;});
 
   const signature = await sessionless.sign(timestamp + hash);
 
-  const res = await get(`${baseURL}user/${hash}?timestamp=${timestamp}&signature=${signature}`);
+  const res = await get(`${baseURL}user/${hash}/pubKey/${keys.pubKey}?timestamp=${timestamp}&signature=${signature}`);
   res.status.should.equal(200);
 });
 
