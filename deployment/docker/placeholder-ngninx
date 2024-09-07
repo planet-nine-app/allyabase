@@ -1,0 +1,88 @@
+# Replace subdomain and your domain with your subdomain and domain respectively
+
+server {
+    listen 80;
+    server_name <subdomain>.continuebee.<your domain>.com <subdomain>.julia.<your domain>.com 
+                 <subdomain>.pref.<your domain>.com <subdomain>.bdo.<your domain>.com <subdomain>.joan.<your domain>.com 
+                 <subdomain>.addie.<your domain>.com <subdomain>.pref.<your domain>.com;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443;
+    server_name allyabase.com;
+    location / {
+        proxy_pass http://localhost:2998;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+server {
+    listen 443;
+    server_name <subdomain>.continuebee.<your domain>.com;
+    location / {
+        proxy_pass http://localhost:2999;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+server {
+    listen 443;
+    server_name <subdomain>.julia.<your domain>.com;
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+server {
+    listen 443;
+    server_name <subdomain>.pref.<your domain>.com;
+    location / {
+        proxy_pass http://localhost:3002;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 443;
+    server_name <subdomain>.bdo.<your domain>.com;
+    location / {
+        proxy_pass http://localhost:3003;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 443;
+    server_name <subdomain>.joan.<your domain>.com;
+    location / {
+        proxy_pass http://localhost:3004;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+server {
+    listen 443;
+    server_name <subdomain>.addie.<your domain>.com;
+    location / {
+        proxy_pass http://localhost:3005;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+
+server {
+    listen 443;
+    server_name <your domain>.com;
+    location / {
+        proxy_pass http://localhost:3006;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}

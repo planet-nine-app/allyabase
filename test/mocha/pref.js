@@ -3,7 +3,9 @@ should();
 import sessionless from 'sessionless-node';
 import superAgent from 'superagent';
 
-const baseURL = process.env.DEV ? 'https://dev.pref.allyabase.com/' : 'http://127.0.0.1:3002/';
+const subdomain = process.env.SUBDOMAIN;
+
+const baseURL = subdomain ? `https://${subdomain}.pref.allyabase.com/` : 'http://127.0.0.1:3002/';
 
 const get = async function(path) {
   console.info("Getting " + path);

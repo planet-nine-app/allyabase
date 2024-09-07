@@ -3,9 +3,9 @@ should();
 import sessionless from 'sessionless-node';
 import superAgent from 'superagent';
 
-//const baseURL = 'https://thirsty-gnu-80.deno.dev/'; // TypeScript deployment
-//const baseURL = 'http://127.0.0.1:8080/';  // Java 
-const baseURL = process.env.DEV ? 'https://dev.continuebee.allyabase.com/' : 'http://localhost:2999/';
+const subdomain = process.env.SUBDOMAIN;
+
+const baseURL = process.env.SUBDOMAIN ? `https://${subdomain}.continuebee.allyabase.com/` : 'http://localhost:2999/';
 
 const get = async function(path) {
   //console.info("Getting " + path);

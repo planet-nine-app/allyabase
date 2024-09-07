@@ -4,7 +4,9 @@ import sessionless from 'sessionless-node';
 import superAgent from 'superagent';
 import { createHash } from 'crypto';
 
-const baseURL = process.env.DEV ? 'https://dev.joan.allyabase.com/' : 'http://127.0.0.1:3004/';
+const subdomain = process.env.SUBDOMAIN;
+
+const baseURL = process.env.SUBDOMAIN ? `https://livetest.joan.allyabase.com/` : 'http://127.0.0.1:3004/';
 
 const get = async function(path) {
   console.info("Getting " + path);

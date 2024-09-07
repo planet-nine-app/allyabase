@@ -3,7 +3,9 @@ should();
 import sessionless from 'sessionless-node';
 import superAgent from 'superagent';
 
-const baseURL = process.env.DEV ? 'https://dev.julia.allyabase.com/' : 'http://127.0.0.1:3000/';
+const subdomain = process.env.SUBDOMAIN;
+
+const baseURL = subdomain ? `https://${subdomain}.julia.allyabase.com/` : 'http://127.0.0.1:3000/';
 //const baseURL = 'https://juliaswitch.com/';
 
 const get = async function(path) {
