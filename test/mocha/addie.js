@@ -51,52 +51,52 @@ console.log(res.body);
   res.body.uuid.length.should.equal(36);
 });
 
-/*
- * uncomment these tests once you have added a processor or two
- *
-it('should put an account to a processor', async () => {
-  const payload = {
-    timestamp: new Date().getTime() + '',
-    name: "Foo",
-    email: "zach+" + (Math.floor(Math.random() * 100000)) + "@planetnine.app"
-  };
 
-  const message = payload.timestamp + savedUser.uuid;
+if(process.env.LIVETEST) {
+  it('should put an account to a processor', async () => {
+    const payload = {
+      timestamp: new Date().getTime() + '',
+      country: 'US',
+      name: "Foo",
+      email: "zach+" + (Math.floor(Math.random() * 100000)) + "@planetnine.app"
+    };
 
-  payload.signature = await sessionless.sign(message);
+    const message = payload.timestamp + savedUser.uuid;
 
-  const res = await put(`${baseURL}user/${savedUser.uuid}/processor/stripe`, payload);
-  savedUser = res.body;
-console.log('stripe account id', savedUser.stripeAccountId);
-  savedUser.stripeAccountId.should.not.equal(null);
-}).timeout(60000);
+    payload.signature = await sessionless.sign(message);
 
-it('should get user with account id', async () => {
-  const timestamp = new Date().getTime() + '';
-  
-  const signature = await sessionless.sign(timestamp + savedUser.uuid);
+    const res = await put(`${baseURL}user/${savedUser.uuid}/processor/stripe`, payload);
+    savedUser = res.body;
+  console.log('stripe account id', savedUser.stripeAccountId);
+    savedUser.stripeAccountId.should.not.equal(null);
+  }).timeout(60000);
 
-  const res = await get(`${baseURL}user/${savedUser.uuid}?timestamp=${timestamp}&signature=${signature}`);
-  savedUser = res.body;
-  savedUser.stripeAccountId.should.not.equal(null);
-});
+  it('should get user with account id', async () => {
+    const timestamp = new Date().getTime() + '';
+    
+    const signature = await sessionless.sign(timestamp + savedUser.uuid);
 
-it('should get a payment intent', async () => {
-  const payload = {
-    timestamp: new Date().getTime() + '',
-    amount: 2000,
-    currency: 'USD',
-    payees: []
-  };
+    const res = await get(`${baseURL}user/${savedUser.uuid}?timestamp=${timestamp}&signature=${signature}`);
+    savedUser = res.body;
+    savedUser.stripeAccountId.should.not.equal(null);
+  });
 
-  const message = payload.timestamp + savedUser.uuid + payload.amount + payload.currency;
+  it('should get a payment intent', async () => {
+    const payload = {
+      timestamp: new Date().getTime() + '',
+      amount: 2000,
+      currency: 'USD',
+      payees: []
+    };
 
-  payload.signature = await sessionless.sign(message);
+    const message = payload.timestamp + savedUser.uuid + payload.amount + payload.currency;
 
-  const res = await post(`${baseURL}user/${savedUser.uuid}/processor/stripe/intent`, payload);
-  res.body.paymentIntent.should.not.equal(null);
-});
-*/
+    payload.signature = await sessionless.sign(message);
+
+    const res = await post(`${baseURL}user/${savedUser.uuid}/processor/stripe/intent`, payload);
+    res.body.paymentIntent.should.not.equal(null);
+  });
+}
 
 it('should delete a user', async () => {
   const timestamp = new Date().getTime() + '';
