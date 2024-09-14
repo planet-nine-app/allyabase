@@ -7,7 +7,7 @@ We will perform at least one transaction via [MAGIC][magic] that splits payment 
 
 ### Developers
 
-* Grab the [Sessionless][sessionless] implementation of your choice or the [addie-js][addie-js] node module.
+* Grab the [Sessionless][sessionless] implementation of your choice, or the [addie-js][addie-js] node module, or Kal's [key generator](https://github.com/Daniel-J-Mason/sessionless-toolkit/blob/main/.github/workflows/all-platform-release.yml)
 
 * Generate a keypair or use addie.createUser (note, you'll need to change the baseURL of addie to `https://livetest.addie.allyabase.com`)
 
@@ -26,4 +26,5 @@ We will perform at least one transaction via [MAGIC][magic] that splits payment 
 The test will take place on Twitch so that people can watch it wherever they are. 
 I do not have a time yet, but it should be before the end of the month.
 
-
+[sessionless]: https://www.github.com/planet-nine-app/sessionless
+[addie-js]: https://www.npmjs.com/package/addie-js
