@@ -1,6 +1,7 @@
 import express from 'express';
 import sessionless from 'sessionless-node';
 import allyabase from 'allyabase-js';
+import cors from 'cors';
 import { dirname } from 'path';
 const fount = allyabase.fount;
 const addie = allyabase.addie;
@@ -24,7 +25,14 @@ const getAddieKeys = () => {
 };
 
 const app = express();
+app.use(cors());
 app.use(express.json());
+
+app.use((req, res, next) => {
+  console.log('got request');
+        console.log(req.path);
+  next();
+});
 
 app.put('/user/processor/stripe', async (req, res) => {
   const fountUUID = await fount.createUser(saveFountKeys, getFountKeys);
@@ -35,14 +43,22 @@ app.put('/user/processor/stripe', async (req, res) => {
 
   payload.signature = await sessionless.sign(message);
 
+        console.log('sending', payload);
+
   try {
-    const resp = await fetch(`http://localhost:3005/user/${addieUUID}processor/stripe`, {
+    const resp = await fetch(`https://livetest.addie.allyabase.com/user/${addieUUID}/processor/stripe`, {
       method: 'put',
       body: JSON.stringify(payload),
       headers: {'Content-Type': 'application/json'}
     });
+    console.log(resp);
 
-    res.send(resp.body);
+          const body = await resp.json();
+
+    console.log(body);
+
+    res.status = resp.status;
+    res.send(body);
 
   } catch(err) {
 console.warn(err);

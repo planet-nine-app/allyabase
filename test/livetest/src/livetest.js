@@ -27,12 +27,14 @@ console.log('i\'ve been clicked');
 	    body: JSON.stringify(payload),
 	    headers: {'Content-Type': 'application/json'}
 	  });
+
+          const body = await res.json();
       
           if(res.status !== 200) {
-            throw res.body;
+            throw body;
           }
 	 
-	  const updatedUser = res.body;
+	  const updatedUser = body;
 	  const stripeAccountId = updatedUser.stripeAccountId;
 
           const addiePublicKey = updatedUser.pubKey;
