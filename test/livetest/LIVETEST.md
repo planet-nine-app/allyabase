@@ -19,7 +19,7 @@ We will perform at least one transaction via [MAGIC][magic] that splits payment 
 
 ### Non-developers
 
-* Go to livetest.addie.allyabase.com, fill in the three fields, click the button, wait a bit, and then share the public key that appears with planetnineisaspaceship aka Zach.
+* Go to https://livetest.addie.allyabase.com/bar, fill in the three fields, click the button, wait a bit, and then share the public key that appears with planetnineisaspaceship aka Zach.
 
 ## Where and when
 
