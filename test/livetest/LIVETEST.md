@@ -1,27 +1,25 @@
 # Live Test
 
-The live test of allyabase will aggregate public keys from everyone who has ever worked on or been engaged with any Planet Nine software.
+The live test of allyabase will aggregate public keys from anyone who has ever worked on or been engaged with any Planet Nine software, and would like to participate.
 We will perform at least one transaction via [MAGIC][magic] that splits payment between whatever keys have been aggregated. 
 
 ## How to join the test:
 
 ### Developers
 
-* Grab the [Sessionless][sessionless] implementation of your choice.
+* Grab the [Sessionless][sessionless] implementation of your choice or the [addie-js][addie-js] node module.
 
-* Generate a keypair
+* Generate a keypair or use addie.createUser (note, you'll need to change the baseURL of addie to `https://livetest.addie.allyabase.com`)
 
-* Follow the documentation for [addie][addie] to register at https://livetest.addie.allyabase.com, and then create an account token for yourself for the processor stripe
+* Follow the documentation for [addie][addie] to register at https://livetest.addie.allyabase.com, and then create an account token for yourself for the processor stripe (You can see an example of this API call in the addie test in the allyabase repo, or in `server.js` is this directory)
 
-* Follow the documentation for [fount][fount] to register at https://livetest.fount.allyabase.com
-
-* Share your public key with planetnineisaspaceship aka Zach
+* Share your addie public key, stripe account id, and addie uuid with planetnineisaspaceship aka Zach
 
 (if you don't have time for all this you can use the website below too, but it'd be great to test the docs a bit). 
 
 ### Non-developers
 
-* Go to livetest.allyabase.com, click the button, and then share the public key that appears with planetnineisaspaceship aka Zach.
+* Go to livetest.addie.allyabase.com, fill in the three fields, click the button, wait a bit, and then share the public key that appears with planetnineisaspaceship aka Zach.
 
 ## Where and when
 
