@@ -1,6 +1,6 @@
 {
   "name": "allyabase-js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JavaScript client for Allyabase",
   "main": "allyabase.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "url": "git+https://github.com/planet-nine-app/allyabase.git"
   },
   "author": "planetnineisaspaceship",
+  "type": "module",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/planet-nine-app/allyabase/issues"
