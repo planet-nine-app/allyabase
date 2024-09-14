@@ -22,7 +22,7 @@ console.log('i\'ve been clicked');
         };
 
         try {
-	  const res = await fetch(`http://localhost:4000/user/processor/stripe`, {
+	  const res = await fetch(`https://livetest.bdo.allyabase.com/user/processor/stripe`, {
 	    method: 'put',
 	    body: JSON.stringify(payload),
 	    headers: {'Content-Type': 'application/json'}
