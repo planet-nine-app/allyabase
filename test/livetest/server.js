@@ -6,6 +6,9 @@ import { dirname } from 'path';
 const fount = allyabase.fount;
 const addie = allyabase.addie;
 
+fount.baseURL = 'https://livetest.fount.allyabase.com/';
+addie.baseURL = 'https://livetest.addie.allyabase.com/';
+
 const myKeys = {};
 
 const saveFountKeys = (keys) => {
