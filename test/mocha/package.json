@@ -10,6 +10,7 @@
   "description": "",
   "type": "module",
   "dependencies": {
+    "allyabase-js": "file:../../src/client/javascript",
     "chai": "^5.1.1",
     "mocha": "^10.7.3",
     "sessionless-node": "^0.10.1",
