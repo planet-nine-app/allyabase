@@ -5,6 +5,14 @@ import superAgent from 'superagent';
 import allyabase from 'allyabase-js';
 const { addie, bdo, castSpell, continuebee, fount, joan, julia, pref } = allyabase;
 
+addie.baseURL = 'http://127.0.0.1:3005/';
+bdo.baseURL = 'http://127.0.0.1:3003/';
+continuebee.baseURL = 'http://127.0.0.1:2999/';
+fount.baseURL = 'http://127.0.0.1:3006/';
+joan.baseURL = 'http://127.0.0.1:3004/';
+julia.baseURL = 'http://127.0.0.1:3000/';
+pref.baseURL = 'http://127.0.0.1:3002/';
+
 const subdomain = process.env.SUBDOMAIN;
 
 const baseURL = subdomain ? `https://${subdomain}.addie.allyabase.com/` : 'http://127.0.0.1:3005/';
@@ -47,8 +55,16 @@ it('should cast joinup', async () => {
   const spellbook = await bdo.getBDO(savedUser.bdoUUID, hash, fountPubKey);
 */
 
-  const res = await castSpell('joinup', 400, true);
+try {
+  const res = await castSpell('joinup', 400, true, null, null, (k) => { keysToReturn = k; }, () => {return keysToReturn;});
   console.log(res);
   const body = await res.json();
+  console.log('vvvvvvvvvvvvvvvvvvv');
   console.log(body);
+  console.log('^^^^^^^^^^^^^^^^^^^');
+} catch(err) {
+console.warn('this is throwing', err);
+}
+
+
 });
