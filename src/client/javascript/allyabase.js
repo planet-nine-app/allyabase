@@ -33,7 +33,7 @@ console.log('fountBaseURL', fount.baseURL);
   const payload = {
     timestamp: new Date().getTime() + '',
     spell: spellName,
-    casterUUID: fountUser,
+    casterUUID: fountUser.uuid,
     totalCost,
     mp,
     ordinal: fountUser.ordinal
@@ -42,6 +42,7 @@ console.log('fountBaseURL', fount.baseURL);
   const message = payload.timestamp + spellName + payload.casterUUID + totalCost + mp + fountUser.ordinal;
   payload.casterSignature = await sessionless.sign(message);
   payload.gateways = [];
+  payload.user = fountUser;
 
   const res = await fetch(spell.destinations[0].stopURL + spellName, {
     method: 'post',
@@ -49,6 +50,7 @@ console.log('fountBaseURL', fount.baseURL);
     headers: {'Content-Type': 'application/json'}
   });
   console.log(res);
+  return res;
 };
 
 export default {
