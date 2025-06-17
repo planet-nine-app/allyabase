@@ -140,6 +140,7 @@ This project would not be possible without the support and contributions of the 
 [fount]: https://www.github.com/planet-nine-app/fount
 [joan]: https://www.github.com/planet-nine-app/joan
 [julia]: https://www.github.com/planet-nine-app/julia
+[minnie]: https://www.github.com/planet-nine-app/minnie
 [pref]: https://www.github.com/planet-nine-app/pref
 [sanora]: https://www.github.com/planet-nine-app/sanora-dot-club
 [juliachat]: https://www.github.com/planet-nine-app/JuliaChat
