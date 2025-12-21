@@ -100,11 +100,17 @@ RUN if [ -d "/usr/src/app/prof/src/server/node" ]; then \
 WORKDIR /usr/src/app/the-advancement/glyphenge
 RUN npm install
 
+# Install proxy server dependencies
+WORKDIR /usr/src/app/allyabase/deployment/docker
+RUN npm install
+RUN npm install http-proxy
+
 WORKDIR /usr/src/app
 
-# Copy scripts for flexible port management
+# Copy scripts for flexible port management and proxy server
 COPY allyabase/deployment/docker/start-with-ports.sh /usr/src/app/
 COPY allyabase/deployment/docker/update-service-ports.sh /usr/src/app/
+COPY allyabase/deployment/docker/proxy-server.js /usr/src/app/allyabase/deployment/docker/
 RUN chmod +x /usr/src/app/start-with-ports.sh
 RUN chmod +x /usr/src/app/update-service-ports.sh
 

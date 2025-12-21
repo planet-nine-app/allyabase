@@ -14,7 +14,8 @@
   "dependencies": {
     "node-fetch": "^3.3.2",
     "sanora-js": "latest",
-    "sessionless-node": "latest"
+    "sessionless-node": "latest",
+    "http-proxy": "^1.18.1"
   },
   "keywords": [
     "planet-nine",

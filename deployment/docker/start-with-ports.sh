@@ -30,6 +30,7 @@ COVENANT_PORT=$((3011 + PORT_OFFSET))
 GLYPHENGE_PORT=$((3010 + PORT_OFFSET))
 PROF_PORT=$((3008 + PORT_OFFSET))
 WIKI_PORT=$((3333 + PORT_OFFSET))
+PROXY_PORT=$((5124 + (PORT_OFFSET / 100)))
 
 echo "Starting allyabase with port offset: $PORT_OFFSET"
 echo "Services will run on:"
@@ -47,6 +48,7 @@ echo "  minnie: $MINNIE_PORT"
 echo "  covenant: $COVENANT_PORT"
 echo "  glyphenge: $GLYPHENGE_PORT (link tapestry weaver)"
 echo "  wiki: $WIKI_PORT (federated wiki with sessionless security)"
+echo "  proxy: $PROXY_PORT (wiki-style path router)"
 if [ "$ENABLE_PROF" = "true" ]; then
   echo "  prof: $PROF_PORT (optional - enabled)"
 else
@@ -111,9 +113,9 @@ module.exports = {
       env: {
         LOCALHOST: 'true',
         PORT: '$ADDIE_PORT',
-        STRIPE_KEY: '<api key here>',
-        STRIPE_PUBLISHING_KEY: '<publishing key here>',
-        SQUARE_KEY: '<api key here>'
+        STRIPE_KEY: process.env.STRIPE_KEY || '<api key here>',
+        STRIPE_PUBLISHING_KEY: process.env.STRIPE_PUBLISHING_KEY || '<publishing key here>',
+        SQUARE_KEY: process.env.SQUARE_KEY || '<api key here>'
       }
     },
     {
@@ -163,6 +165,15 @@ module.exports = {
         PORT: '$GLYPHENGE_PORT',
         BDO_BASE_URL: 'http://localhost:$BDO_PORT',
         FOUNT_BASE_URL: 'http://localhost:$FOUNT_PORT'
+      }
+    },
+    {
+      name: 'proxy',
+      script: '/usr/src/app/allyabase/deployment/docker/proxy-server.js',
+      cwd: '/usr/src/app/allyabase/deployment/docker',
+      env: {
+        PROXY_PORT: '$PROXY_PORT',
+        PORT_OFFSET: '$PORT_OFFSET'
       }
     }
 EOL

@@ -237,17 +237,15 @@ if [ "$ENVIRONMENT" = "local" ]; then
   exit 0
 fi
 
-# Check for Addie API keys configuration
+# Check for API keys configuration
 ADDIE_ENV_VARS=""
+
+# Check for addie-keys.env (OpenAI, Anthropic)
 ADDIE_KEYS_FILE="../../addie-keys.env"
-
 if [ -f "$ADDIE_KEYS_FILE" ]; then
-  echo "🔑 Found Addie API keys configuration"
-
-  # Source the file to load variables
+  echo "🔑 Found Addie API keys configuration (addie-keys.env)"
   source "$ADDIE_KEYS_FILE"
 
-  # Build environment variable arguments for Docker
   if [ -n "$OPENAI_API_KEY" ]; then
     ADDIE_ENV_VARS="$ADDIE_ENV_VARS -e OPENAI_API_KEY=$OPENAI_API_KEY"
     echo "   ✅ OpenAI API key configured"
@@ -257,13 +255,35 @@ if [ -f "$ADDIE_KEYS_FILE" ]; then
     ADDIE_ENV_VARS="$ADDIE_ENV_VARS -e ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY"
     echo "   ✅ Anthropic API key configured"
   fi
+  echo ""
+fi
 
-  if [ -z "$ADDIE_ENV_VARS" ]; then
-    echo "   ⚠️  addie-keys.env found but no API keys configured"
+# Check for .env (Stripe, Square)
+ENV_FILE=".env"
+if [ -f "$ENV_FILE" ]; then
+  echo "🔑 Found environment configuration (.env)"
+  source "$ENV_FILE"
+
+  if [ -n "$STRIPE_KEY" ]; then
+    ADDIE_ENV_VARS="$ADDIE_ENV_VARS -e STRIPE_KEY=$STRIPE_KEY"
+    echo "   ✅ Stripe secret key configured"
+  fi
+
+  if [ -n "$STRIPE_PUBLISHING_KEY" ]; then
+    ADDIE_ENV_VARS="$ADDIE_ENV_VARS -e STRIPE_PUBLISHING_KEY=$STRIPE_PUBLISHING_KEY"
+    echo "   ✅ Stripe publishable key configured"
+  fi
+
+  if [ -n "$SQUARE_KEY" ]; then
+    ADDIE_ENV_VARS="$ADDIE_ENV_VARS -e SQUARE_KEY=$SQUARE_KEY"
+    echo "   ✅ Square API key configured"
   fi
   echo ""
-else
-  echo "ℹ️  No Addie API keys found (optional)"
+fi
+
+if [ -z "$ADDIE_ENV_VARS" ]; then
+  echo "ℹ️  No API keys configured (optional)"
+  echo "   Create .env from .env.example to enable payment features"
   echo "   Create addie-keys.env from template to enable AI features"
   echo ""
 fi
@@ -274,13 +294,14 @@ if [ "$ENABLE_PROF" = true ]; then
   PROF_PORTS="-p 5123:3008"
 fi
 
-# Start Base 1 (Host ports 5111-5125 → Standard Docker internal ports)
-echo "🏗️  Starting Base 1 (Host ports 5111-5125)..."
+# Start Base 1 (Host ports 5111-5126 → Standard Docker internal ports)
+echo "🏗️  Starting Base 1 (Host ports 5111-5126)..."
 if [ "$ENABLE_PROF" = true ]; then
   echo "   Prof enabled on port 5123"
 fi
 echo "   Wiki enabled on port 5124"
 echo "   Glyphenge enabled on port 5125"
+echo "   Proxy enabled on port 5126"
 
 docker run -d \
   --name allyabase-base1 \
@@ -300,11 +321,12 @@ docker run -d \
   -p 5122:3011 \
   -p 5124:3333 \
   -p 5125:3010 \
+  -p 5126:5124 \
   $PROF_PORTS \
   allyabase-flexible
 
 # Wait for Base 1 services (check host ports)
-BASE1_PORTS=(5111 5112 5113 5114 5115 5116 5117 5118 5119 5120 5121 5122 5124 5125)
+BASE1_PORTS=(5111 5112 5113 5114 5115 5116 5117 5118 5119 5120 5121 5122 5124 5125 5126)
 if [ "$ENABLE_PROF" = true ]; then
   BASE1_PORTS+=(5123)
 fi
@@ -322,13 +344,14 @@ if [ "$ENABLE_PROF" = true ]; then
   PROF_PORTS_BASE2="-p 5223:3008"
 fi
 
-# Start Base 2 (Host ports 5211-5225 → Standard Docker internal ports)
-echo "🏗️  Starting Base 2 (Host ports 5211-5225)..."
+# Start Base 2 (Host ports 5211-5226 → Standard Docker internal ports)
+echo "🏗️  Starting Base 2 (Host ports 5211-5226)..."
 if [ "$ENABLE_PROF" = true ]; then
   echo "   Prof enabled on port 5223"
 fi
 echo "   Wiki enabled on port 5224"
 echo "   Glyphenge enabled on port 5225"
+echo "   Proxy enabled on port 5226"
 
 docker run -d \
   --name allyabase-base2 \
@@ -348,11 +371,12 @@ docker run -d \
   -p 5222:3011 \
   -p 5224:3333 \
   -p 5225:3010 \
+  -p 5226:5124 \
   $PROF_PORTS_BASE2 \
   allyabase-flexible
 
 # Wait for Base 2 services (check host ports)
-BASE2_PORTS=(5211 5212 5213 5214 5215 5216 5217 5218 5219 5220 5221 5222 5224 5225)
+BASE2_PORTS=(5211 5212 5213 5214 5215 5216 5217 5218 5219 5220 5221 5222 5224 5225 5226)
 if [ "$ENABLE_PROF" = true ]; then
   BASE2_PORTS+=(5223)
 fi
@@ -370,13 +394,14 @@ if [ "$ENABLE_PROF" = true ]; then
   PROF_PORTS_BASE3="-p 5323:3008"
 fi
 
-# Start Base 3 (Host ports 5311-5325 → Standard Docker internal ports)
-echo "🏗️  Starting Base 3 (Host ports 5311-5325)..."
+# Start Base 3 (Host ports 5311-5326 → Standard Docker internal ports)
+echo "🏗️  Starting Base 3 (Host ports 5311-5326)..."
 if [ "$ENABLE_PROF" = true ]; then
   echo "   Prof enabled on port 5323"
 fi
 echo "   Wiki enabled on port 5324"
 echo "   Glyphenge enabled on port 5325"
+echo "   Proxy enabled on port 5326"
 
 docker run -d \
   --name allyabase-base3 \
@@ -396,11 +421,12 @@ docker run -d \
   -p 5322:3011 \
   -p 5324:3333 \
   -p 5325:3010 \
+  -p 5326:5124 \
   $PROF_PORTS_BASE3 \
   allyabase-flexible
 
 # Wait for Base 3 services (check host ports)
-BASE3_PORTS=(5311 5312 5313 5314 5315 5316 5317 5318 5319 5320 5321 5322 5324 5325)
+BASE3_PORTS=(5311 5312 5313 5314 5315 5316 5317 5318 5319 5320 5321 5322 5324 5325 5326)
 if [ "$ENABLE_PROF" = true ]; then
   BASE3_PORTS+=(5323)
 fi
@@ -475,6 +501,7 @@ if [ "$ENABLE_PROF" = true ]; then
 fi
 echo "  wiki: http://localhost:5124 → docker:3333"
 echo "  glyphenge: http://localhost:5125 → docker:3010"
+echo "  proxy: http://localhost:5126 → docker:5124"
 echo ""
 echo "Base 2:"
 echo "  julia: http://localhost:5211 → docker:3000"
@@ -494,6 +521,7 @@ if [ "$ENABLE_PROF" = true ]; then
 fi
 echo "  wiki: http://localhost:5224 → docker:3333"
 echo "  glyphenge: http://localhost:5225 → docker:3010"
+echo "  proxy: http://localhost:5226 → docker:5124"
 echo ""
 echo "Base 3:"
 echo "  julia: http://localhost:5311 → docker:3000"
@@ -513,6 +541,7 @@ if [ "$ENABLE_PROF" = true ]; then
 fi
 echo "  wiki: http://localhost:5324 → docker:3333"
 echo "  glyphenge: http://localhost:5325 → docker:3010"
+echo "  proxy: http://localhost:5326 → docker:5124"
 echo ""
 if [ "$ENABLE_ADVANCEMENT" = true ]; then
   echo "The Advancement Test Server:"
