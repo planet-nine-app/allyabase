@@ -1,7 +1,25 @@
 # Federated Wiki - allyabase plugin
 
-allyabase is a Backend as a Service (BaaS) similar to Firebase and Supabase except it is open, and interoperable with other systems that utilize the [Sessionless] protocol. 
-allyabase has many features, but the few that are exposed at this time in wiki are enable the signing of smart contracts, and the subsequent creation and/or transfer of nineum tokens upon completed parameters from the contracts. 
+allyabase is a Backend as a Service (BaaS) similar to Firebase and Supabase except it is open, and interoperable with other systems that utilize the [Sessionless] protocol.
+allyabase has many features, but the few that are exposed at this time in wiki are enable the signing of smart contracts, and the subsequent creation and/or transfer of nineum tokens upon completed parameters from the contracts.
+
+## Configuration
+
+### Required Environment Variables
+
+The allyabase plugin requires the following environment variables to be set:
+
+- **ADDIE_STRIPE_URL** (required): The URL for the Addie Stripe payment processing service. This must be set for the allyabase instance to start. No default value is provided.
+
+Example configuration:
+```bash
+export ADDIE_STRIPE_URL=https://addie.planetnine.app
+```
+
+If `ADDIE_STRIPE_URL` is not set, the plugin will fail to start with an error message.
+
+## API Routes
+
 To facilitate this, the plugin exposes the following routes to the client:
 
 <details>
