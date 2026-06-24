@@ -53,6 +53,14 @@ RUN WIKI_PATH=$(npm root -g)/wiki/node_modules && \
     mkdir -p "$WIKI_PATH" && \
     cp -r /usr/src/app/allyabase/src/wiki/wiki-plugin-allyabase "$WIKI_PATH/"
 
+# Install wiki-plugin-home from local source
+COPY third-party/wiki-plugin-home /usr/src/app/wiki-plugin-home
+WORKDIR /usr/src/app/wiki-plugin-home
+RUN npm install
+WORKDIR /usr/src/app
+RUN WIKI_PATH=$(npm root -g)/wiki/node_modules && \
+    cp -r /usr/src/app/wiki-plugin-home "$WIKI_PATH/"
+
 WORKDIR /usr/src/app/julia/src/server/node
 RUN npm install
 

@@ -32,7 +32,6 @@ const SERVICE_PORTS = {
   'sanora': 7243 + PORT_OFFSET,
   'dolores': 3007 + PORT_OFFSET,
   'minnie': 2525 + PORT_OFFSET,
-  'covenant': 3011 + PORT_OFFSET,
   'glyphenge': 3010 + PORT_OFFSET,
   'linkitylink': 3010 + PORT_OFFSET, // Alias for glyphenge
   'prof': 3008 + PORT_OFFSET

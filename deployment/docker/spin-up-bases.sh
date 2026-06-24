@@ -220,7 +220,6 @@ if [ "$ENVIRONMENT" = "local" ]; then
     fi
     echo "  sanora: http://localhost:7243"
     echo "  bdo: http://localhost:3003"
-    echo "  covenant: http://localhost:3011"
     echo "  julia: http://localhost:3000"
     echo "  continuebee: http://localhost:2999"
     echo "  fount: http://localhost:3002"
@@ -495,7 +494,6 @@ echo "  dolores: http://localhost:5118 → docker:3007"
 echo "  minnie: http://localhost:5119 → docker:2525"
 echo "  aretha: http://localhost:5120 → docker:7277"
 echo "  sanora: http://localhost:5121 → docker:7243"
-echo "  covenant: http://localhost:5122 → docker:3011"
 if [ "$ENABLE_PROF" = true ]; then
   echo "  prof: http://localhost:5123 → docker:3008"
 fi
@@ -515,7 +513,6 @@ echo "  dolores: http://localhost:5218 → docker:3007"
 echo "  minnie: http://localhost:5219 → docker:2525"
 echo "  aretha: http://localhost:5220 → docker:7277"
 echo "  sanora: http://localhost:5221 → docker:7243"
-echo "  covenant: http://localhost:5222 → docker:3011"
 if [ "$ENABLE_PROF" = true ]; then
   echo "  prof: http://localhost:5223 → docker:3008"
 fi
@@ -535,7 +532,6 @@ echo "  dolores: http://localhost:5318 → docker:3007"
 echo "  minnie: http://localhost:5319 → docker:2525"
 echo "  aretha: http://localhost:5320 → docker:7277"
 echo "  sanora: http://localhost:5321 → docker:7243"
-echo "  covenant: http://localhost:5322 → docker:3011"
 if [ "$ENABLE_PROF" = true ]; then
   echo "  prof: http://localhost:5323 → docker:3008"
 fi

@@ -52,7 +52,6 @@ case $PORT_OFFSET in
     MINNIE_PORT=5119
     ARETHA_PORT=5120
     SANORA_PORT=5121
-    COVENANT_PORT=5122
     ;;
   2000)
     # Base 2: Host ports 5211-5222
@@ -67,7 +66,6 @@ case $PORT_OFFSET in
     MINNIE_PORT=5219
     ARETHA_PORT=5220
     SANORA_PORT=5221
-    COVENANT_PORT=5222
     ;;
   3000)
     # Base 3: Host ports 5311-5322
@@ -82,7 +80,6 @@ case $PORT_OFFSET in
     MINNIE_PORT=5319
     ARETHA_PORT=5320
     SANORA_PORT=5321
-    COVENANT_PORT=5322
     ;;
   *)
     echo "❌ Unknown PORT_OFFSET: $PORT_OFFSET. Expected 1000, 2000, or 3000."
@@ -102,7 +99,6 @@ echo "  dolores: localhost:$DOLORES_PORT"
 echo "  minnie: localhost:$MINNIE_PORT"
 echo "  aretha: localhost:$ARETHA_PORT"
 echo "  sanora: localhost:$SANORA_PORT"
-echo "  covenant: localhost:$COVENANT_PORT"
 echo ""
 
 # Function to run a test with proper error handling

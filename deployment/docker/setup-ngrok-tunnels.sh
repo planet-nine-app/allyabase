@@ -94,7 +94,6 @@ generate_service_urls() {
             echo "  minnie: ${tunnel_url%:*}:5119"
             echo "  aretha: ${tunnel_url%:*}:5120"
             echo "  sanora: ${tunnel_url%:*}:5121"
-            echo "  covenant: ${tunnel_url%:*}:5122"
             ;;
         5211) # Base 2
             echo "  julia: ${tunnel_url%:*}:5211"
@@ -108,7 +107,6 @@ generate_service_urls() {
             echo "  minnie: ${tunnel_url%:*}:5219"
             echo "  aretha: ${tunnel_url%:*}:5220"
             echo "  sanora: ${tunnel_url%:*}:5221"
-            echo "  covenant: ${tunnel_url%:*}:5222"
             ;;
         5311) # Base 3
             echo "  julia: ${tunnel_url%:*}:5311"
@@ -122,7 +120,6 @@ generate_service_urls() {
             echo "  minnie: ${tunnel_url%:*}:5319"
             echo "  aretha: ${tunnel_url%:*}:5320"
             echo "  sanora: ${tunnel_url%:*}:5321"
-            echo "  covenant: ${tunnel_url%:*}:5322"
             ;;
     esac
     echo ""

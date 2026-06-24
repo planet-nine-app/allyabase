@@ -243,8 +243,7 @@ class AllyabaseBootstrap {
       dolores: 7,
       minnie: -475,  // Special case for minnie
       aretha: 5277,  // Special case for aretha
-      sanora: 5243,  // Special case for sanora
-      covenant: 8011 // Special case for covenant
+      sanora: 5243   // Special case for sanora
     };
     
     const services = {};

@@ -26,7 +26,6 @@ ARETHA_PORT=$((7277 + PORT_OFFSET))
 SANORA_PORT=$((7243 + PORT_OFFSET))
 DOLORES_PORT=$((3007 + PORT_OFFSET))
 MINNIE_PORT=$((2525 + PORT_OFFSET))
-COVENANT_PORT=$((3011 + PORT_OFFSET))
 GLYPHENGE_PORT=$((3010 + PORT_OFFSET))
 PROF_PORT=$((3008 + PORT_OFFSET))
 WIKI_PORT=$((3333 + PORT_OFFSET))
@@ -45,7 +44,6 @@ echo "  aretha: $ARETHA_PORT"
 echo "  sanora: $SANORA_PORT"
 echo "  dolores: $DOLORES_PORT"
 echo "  minnie: $MINNIE_PORT"
-echo "  covenant: $COVENANT_PORT"
 echo "  glyphenge: $GLYPHENGE_PORT (link tapestry weaver)"
 echo "  wiki: $WIKI_PORT (federated wiki with sessionless security)"
 echo "  proxy: $PROXY_PORT (wiki-style path router)"
@@ -145,17 +143,11 @@ module.exports = {
     {
       name: 'minnie',
       script: '/usr/src/app/minnie/src/server/node/minnie.js',
-      env: { 
-        LOCALHOST: 'true',
-        PORT: '$MINNIE_PORT'
-      }
-    },
-    {
-      name: 'covenant',
-      script: '/usr/src/app/covenant/src/server/node/covenant.js',
       env: {
         LOCALHOST: 'true',
-        PORT: '$COVENANT_PORT'
+        PORT: '$MINNIE_PORT',
+        RESEND_API_KEY: process.env.RESEND_API_KEY || '',
+        MINNIE_FROM: process.env.MINNIE_FROM || 'noreply@planetnine.app'
       }
     },
     {
@@ -199,6 +191,6 @@ EOL
 
 # Start federated wiki with sessionless security and allyabase plugin for proxy routes
 echo "Starting federated wiki on port $WIKI_PORT with sessionless security and allyabase proxy..."
-wiki --security wiki-security-sessionless --plugin wiki-plugin-allyabase --port $WIKI_PORT > /var/log/wiki.log 2>&1 &
+wiki --security wiki-security-sessionless --plugin wiki-plugin-allyabase --plugin wiki-plugin-home --port $WIKI_PORT > /var/log/wiki.log 2>&1 &
 
 pm2-runtime start ecosystem.config.js

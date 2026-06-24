@@ -14,7 +14,6 @@ docker run -d \
   -p 6005:6005 \
   -p 6006:6006 \
   -p 6007:6007 \
-  -p 6011:6011 \
   -p 6525:6525 \
   -p 10277:10277 \
   -p 10243:10243 \
@@ -30,7 +29,6 @@ echo "  joan: http://localhost:6004"
 echo "  addie: http://localhost:6005"
 echo "  fount: http://localhost:6006"
 echo "  dolores: http://localhost:6007"
-echo "  covenant: http://localhost:6011"
 echo "  minnie: http://localhost:6525"
 echo "  aretha: http://localhost:10277"
 echo "  sanora: http://localhost:10243"

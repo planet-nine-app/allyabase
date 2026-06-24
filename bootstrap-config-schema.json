@@ -81,8 +81,7 @@
                   "minnie": {"type": "string", "format": "uri"},
                   "aretha": {"type": "string", "format": "uri"},
                   "pref": {"type": "string", "format": "uri"},
-                  "continuebee": {"type": "string", "format": "uri"},
-                  "covenant": {"type": "string", "format": "uri"}
+                  "continuebee": {"type": "string", "format": "uri"}
                 },
                 "additionalProperties": false
               },
@@ -271,9 +270,9 @@
           "description": "List of services to enable on this base",
           "items": {
             "type": "string",
-            "enum": ["bdo", "julia", "sanora", "fount", "dolores", "addie", "joan", "minnie", "aretha", "pref", "continuebee", "covenant"]
+            "enum": ["bdo", "julia", "sanora", "fount", "dolores", "addie", "joan", "minnie", "aretha", "pref", "continuebee"]
           },
-          "default": ["bdo", "julia", "sanora", "fount", "dolores", "addie", "joan", "minnie", "aretha", "pref", "continuebee", "covenant"]
+          "default": ["bdo", "julia", "sanora", "fount", "dolores", "addie", "joan", "minnie", "aretha", "pref", "continuebee"]
         },
         "ports": {
           "type": "object",

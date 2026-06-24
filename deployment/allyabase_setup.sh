@@ -14,7 +14,6 @@ services=(
     'aretha'
     'bdo'
     'continuebee'
-    'covenant'
     'dolores'
     'fount'
     'joan'

@@ -159,14 +159,12 @@ Each application test validates:
 | minnie      | :5119      | :5219      | :5319      | 2525 + PORT_OFFSET |
 | aretha      | :5120      | :5220      | :5320      | 7277 + PORT_OFFSET |
 | sanora      | :5121      | :5221      | :5321      | 7243 + PORT_OFFSET |
-| covenant    | :5122      | :5222      | :5322      | 3011 + PORT_OFFSET |
 
 ## Cross-Base Testing Scenarios
 
 ### StackChat P2P Testing
 - **User on Base 1** connects to **User on Base 2**
 - **User on Base 1** connects to **User on Base 3**
-- Validates cryptographic handshake across different covenant services
 - Tests joint BDO creation for cross-base messaging
 
 ### MyBase Aggregation Testing
@@ -265,10 +263,6 @@ tail -f /tmp/nullary-test-data/rhapsold_tauri.log
 # Test without cross-base functionality
 ./test-complete-ecosystem.sh --no-cross-base
 
-# Verify covenant services on all bases
-curl http://localhost:4011/health  # Base 1
-curl http://localhost:5011/health  # Base 2
-curl http://localhost:6011/health  # Base 3
 ```
 
 ## CI/CD Integration

@@ -24,8 +24,7 @@
           "minnie": "https://dev.minnie.allyabase.com",
           "aretha": "https://dev.aretha.allyabase.com",
           "pref": "https://dev.pref.allyabase.com",
-          "continuebee": "https://dev.continuebee.allyabase.com",
-          "covenant": "https://dev.covenant.allyabase.com"
+          "continuebee": "https://dev.continuebee.allyabase.com"
         },
         "enabled": true
       }
@@ -52,9 +51,8 @@
       "joan",
       "minnie",
       "aretha",
-      "pref", 
-      "continuebee",
-      "covenant"
+      "pref",
+      "continuebee"
     ],
     "ports": {
       "basePort": 3000,

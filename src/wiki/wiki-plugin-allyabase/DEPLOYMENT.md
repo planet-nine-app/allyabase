@@ -95,7 +95,6 @@ The following services are automatically deployed:
 
 1. **fount** - User management and nineum
 2. **bdo** - Big Data Object storage
-3. **covenant** - Contract management
 4. **prof** - Profiles and data
 5. **addie** - Payment processing
 6. **julia** - Product management
@@ -191,7 +190,6 @@ module.exports = {
   apps: [
     { name: 'fount', cwd: './fount/src/server/node', script: 'npm', args: 'start' },
     { name: 'bdo', cwd: './bdo/src/server/node', script: 'npm', args: 'start' },
-    { name: 'covenant', cwd: './covenant/src/server/node', script: 'npm', args: 'start' },
     { name: 'prof', cwd: './prof/src/server/node', script: 'npm', args: 'start' },
     { name: 'addie', cwd: './addie/src/server/node', script: 'npm', args: 'start' },
     { name: 'julia', cwd: './julia/src/server/node', script: 'npm', args: 'start' },

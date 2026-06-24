@@ -35,7 +35,6 @@ The proxy intercepts requests matching the pattern `/plugin/allyabase/{service}/
   'sanora': 7243,
   'dolores': 3007,
   'minnie': 2525,
-  'covenant': 3011,
   'glyphenge': 3010,
   'linkitylink': 3010, // Alias for glyphenge
   'prof': 3008

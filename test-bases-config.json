@@ -21,7 +21,6 @@
         "minnie": 5119,
         "aretha": 5120,
         "sanora": 5121,
-        "covenant": 5122,
         "glyphenge": 5125,
         "linkitylink": 5125
       },
@@ -65,7 +64,6 @@
         "minnie": 5219,
         "aretha": 5220,
         "sanora": 5221,
-        "covenant": 5222,
         "glyphenge": 5225,
         "linkitylink": 5225
       },
@@ -109,7 +107,6 @@
         "minnie": 5319,
         "aretha": 5320,
         "sanora": 5321,
-        "covenant": 5322,
         "glyphenge": 5325,
         "linkitylink": 5325
       },
@@ -142,7 +139,6 @@
       "fount": 17,
       "dolores": 18,
       "sanora": 21,
-      "covenant": 22
     },
     "basePortStart": 5000
   },

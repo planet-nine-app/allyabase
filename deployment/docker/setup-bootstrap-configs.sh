@@ -36,8 +36,7 @@ if [ "${USE_NGROK:-false}" = "true" ]; then
   BASE1_ARETHA_URL=$(./get-ngrok-urls.sh base1 aretha 2>/dev/null || echo "https://localhost:5120")
   BASE1_PREF_URL=$(./get-ngrok-urls.sh base1 pref 2>/dev/null || echo "https://localhost:5113")
   BASE1_CONTINUEBEE_URL=$(./get-ngrok-urls.sh base1 continuebee 2>/dev/null || echo "https://localhost:5112")
-  BASE1_COVENANT_URL=$(./get-ngrok-urls.sh base1 covenant 2>/dev/null || echo "https://localhost:5122")
-  
+
   BASE2_BDO_URL=$(./get-ngrok-urls.sh base2 bdo 2>/dev/null || echo "https://localhost:5214")
   BASE3_BDO_URL=$(./get-ngrok-urls.sh base3 bdo 2>/dev/null || echo "https://localhost:5314")
 else
@@ -55,8 +54,7 @@ else
   BASE1_ARETHA_URL="http://localhost:5120"
   BASE1_PREF_URL="http://localhost:5113"
   BASE1_CONTINUEBEE_URL="http://localhost:5112"
-  BASE1_COVENANT_URL="http://localhost:5122"
-  
+
   BASE2_BDO_URL="http://localhost:5214"
   BASE3_BDO_URL="http://localhost:5314"
 fi
@@ -98,9 +96,9 @@ cat > "$BOOTSTRAP_DIR/base1-config.json" << EOF
   },
   "services": {
     "enabled": [
-      "bdo", "julia", "sanora", "fount", "dolores", 
-      "addie", "joan", "minnie", "aretha", "pref", 
-      "continuebee", "covenant"
+      "bdo", "julia", "sanora", "fount", "dolores",
+      "addie", "joan", "minnie", "aretha", "pref",
+      "continuebee"
     ],
     "ports": {
       "basePort": 4000,
@@ -127,8 +125,7 @@ cat > "$BOOTSTRAP_DIR/base1-config.json" << EOF
       "minnie": "$BASE1_MINNIE_URL",
       "aretha": "$BASE1_ARETHA_URL",
       "pref": "$BASE1_PREF_URL",
-      "continuebee": "$BASE1_CONTINUEBEE_URL",
-      "covenant": "$BASE1_COVENANT_URL"
+      "continuebee": "$BASE1_CONTINUEBEE_URL"
     }
   }
 }
@@ -164,8 +161,7 @@ cat > "$BOOTSTRAP_DIR/base2-config.json" << EOF
           "minnie": "$BASE1_MINNIE_URL",
           "aretha": "$BASE1_ARETHA_URL",
           "pref": "$BASE1_PREF_URL",
-          "continuebee": "$BASE1_CONTINUEBEE_URL",
-          "covenant": "$BASE1_COVENANT_URL"
+          "continuebee": "$BASE1_CONTINUEBEE_URL"
         },
         "enabled": true
       }
@@ -202,7 +198,7 @@ cat > "$BOOTSTRAP_DIR/base2-config.json" << EOF
     "enabled": [
       "bdo", "julia", "sanora", "fount", "dolores",
       "addie", "joan", "minnie", "aretha", "pref",
-      "continuebee", "covenant"
+      "continuebee"
     ],
     "ports": {
       "basePort": 5000,
@@ -253,8 +249,7 @@ cat > "$BOOTSTRAP_DIR/base3-config.json" << EOF
           "minnie": "$BASE1_MINNIE_URL",
           "aretha": "$BASE1_ARETHA_URL",
           "pref": "$BASE1_PREF_URL",
-          "continuebee": "$BASE1_CONTINUEBEE_URL",
-          "covenant": "$BASE1_COVENANT_URL"
+          "continuebee": "$BASE1_CONTINUEBEE_URL"
         },
         "enabled": true
       }
@@ -298,7 +293,7 @@ cat > "$BOOTSTRAP_DIR/base3-config.json" << EOF
     "enabled": [
       "bdo", "julia", "sanora", "fount", "dolores",
       "addie", "joan", "minnie", "aretha", "pref",
-      "continuebee", "covenant"
+      "continuebee"
     ],
     "ports": {
       "basePort": 6000,

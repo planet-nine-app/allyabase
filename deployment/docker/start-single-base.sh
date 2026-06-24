@@ -110,7 +110,6 @@ check_port() {
 
 # Function to wait for all services to be ready
 wait_for_services() {
-  local services=("3000:julia" "2999:continuebee" "3002:pref" "3003:bdo" "3004:joan" "3005:addie" "3006:fount" "3007:dolores" "2525:minnie" "7277:aretha" "7243:sanora" "3011:covenant" "3333:wiki")
 
   echo "  ⏳ Waiting for services to be ready..."
 
@@ -192,7 +191,6 @@ echo "  dolores:     http://localhost:3007"
 echo "  minnie:      http://localhost:2525"
 echo "  aretha:      http://localhost:7277"
 echo "  sanora:      http://localhost:7243"
-echo "  covenant:    http://localhost:3011"
 echo "  wiki:        http://localhost:3333"
 if [ "$ENABLE_PROF" = true ]; then
   echo "  prof:        http://localhost:3008"

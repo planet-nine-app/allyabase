@@ -17,7 +17,6 @@ Allyabase now supports routing all service traffic through Federated Wiki as a s
 
 The wiki plugin provides:
 - **Service Proxy Routes**: All microservices accessible via `/plugin/allyabase/{service}/*`
-- **Contract Management**: Covenant contract signing and viewing
 - **Feed Management**: Dolores feed subscriptions
 - **Inventory System**: BDO-based inventory management
 - **Deployment Tools**: Service deployment and configuration
@@ -38,7 +37,6 @@ All Planet Nine services are accessible through the wiki proxy:
 /plugin/allyabase/minnie/*       → minnie:2525
 /plugin/allyabase/aretha/*       → aretha:7277
 /plugin/allyabase/sanora/*       → sanora:7243
-/plugin/allyabase/covenant/*     → covenant:3011
 /plugin/allyabase/glyphenge/*    → glyphenge:3010
 /plugin/allyabase/linkitylink/*  → glyphenge:3010 (alias)
 ```
@@ -116,8 +114,7 @@ curl http://localhost:5124/plugin/allyabase/fount/health
 8. **Sanora** (7243) - E-commerce and product management
 9. **Dolores** (3007) - Content discovery and feeds
 10. **Aretha** (7277) - Ticket and access management
-11. **Covenant** (3011) - Contract management with SVG visualization
-12. **Minnie** (2525) - Email service
+11. **Minnie** (2525) - Email service
 
 #### Platform Services
 13. **Glyphenge** (3010) - Server-side SVG rendering and link tapestries
@@ -281,7 +278,6 @@ allyabase/
 │           └── server/
 │               ├── server.js         # Server initialization
 │               ├── proxy.js          # Service proxy routes
-│               ├── contracts.js      # Covenant integration
 │               ├── feeds.js          # Dolores integration
 │               ├── inventory.js      # BDO inventory system
 │               └── deployment.js     # Deployment tools
@@ -296,7 +292,6 @@ allyabase/
 │   ├── aretha/
 │   ├── bdo/
 │   ├── continuebee/
-│   ├── covenant/
 │   ├── dolores/
 │   ├── fount/
 │   ├── joan/

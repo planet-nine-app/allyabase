@@ -135,7 +135,6 @@ All services use the formula: `default_port + PORT_OFFSET`
 | addie        | 3005    | 4005           | 5005           | 6005           |
 | fount        | 3006    | 4006           | 5006           | 6006           |
 | dolores      | 3007    | 4007           | 5007           | 6007           |
-| covenant     | 3011    | 4011           | 5011           | 6011           |
 | minnie       | 2525    | 3525           | 4525           | 5525           |
 | aretha       | 7277    | 8277           | 9277           | 10277          |
 | sanora       | 7243    | 8243           | 9243           | 10243          |

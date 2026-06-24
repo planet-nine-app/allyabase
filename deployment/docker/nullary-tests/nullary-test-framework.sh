@@ -52,11 +52,10 @@ get_service_urls() {
     export MINNIE_URL=$("$get_urls_script" "$base_name" "minnie" 2>/dev/null || echo "ERROR")
     export ARETHA_URL=$("$get_urls_script" "$base_name" "aretha" 2>/dev/null || echo "ERROR")
     export SANORA_URL=$("$get_urls_script" "$base_name" "sanora" 2>/dev/null || echo "ERROR")
-    export COVENANT_URL=$("$get_urls_script" "$base_name" "covenant" 2>/dev/null || echo "ERROR")
-    
+
     # Check if any URLs failed to resolve
     local failed_urls=()
-    for service_url in "$JULIA_URL" "$CONTINUEBEE_URL" "$PREF_URL" "$BDO_URL" "$JOAN_URL" "$ADDIE_URL" "$FOUNT_URL" "$DOLORES_URL" "$MINNIE_URL" "$ARETHA_URL" "$SANORA_URL" "$COVENANT_URL"; do
+    for service_url in "$JULIA_URL" "$CONTINUEBEE_URL" "$PREF_URL" "$BDO_URL" "$JOAN_URL" "$ADDIE_URL" "$FOUNT_URL" "$DOLORES_URL" "$MINNIE_URL" "$ARETHA_URL" "$SANORA_URL"; do
       if [ "$service_url" = "ERROR" ] || [ -z "$service_url" ]; then
         failed_urls+=("$service_url")
       fi
@@ -85,7 +84,6 @@ get_service_urls() {
         export MINNIE_URL="https://dev.minnie.allyabase.com"
         export ARETHA_URL="https://dev.aretha.allyabase.com"
         export SANORA_URL="https://dev.sanora.allyabase.com"
-        export COVENANT_URL="https://dev.covenant.allyabase.com"
         ;;
       *)
         echo "❌ Unknown PORT_OFFSET: $offset. Expected 1000, 2000, or 3000."
@@ -106,7 +104,6 @@ get_service_urls() {
   echo "  MINNIE: $MINNIE_URL"
   echo "  ARETHA: $ARETHA_URL"
   echo "  SANORA: $SANORA_URL"
-  echo "  COVENANT: $COVENANT_URL"
 }
 
 # Check if service is responding
@@ -150,10 +147,6 @@ verify_services() {
   
   if ! check_service "$SANORA_URL" "Sanora"; then
     failed_services+=("Sanora")
-  fi
-  
-  if ! check_service "$COVENANT_URL" "Covenant"; then
-    failed_services+=("Covenant")
   fi
   
   # Additional services for complete functionality
@@ -222,7 +215,6 @@ launch_tauri_app() {
   export TAURI_ENV_BDO_URL="$BDO_URL"
   export TAURI_ENV_FOUNT_URL="$FOUNT_URL"
   export TAURI_ENV_SANORA_URL="$SANORA_URL"
-  export TAURI_ENV_COVENANT_URL="$COVENANT_URL"
   export TAURI_ENV_JULIA_URL="$JULIA_URL"
   export TAURI_ENV_ADDIE_URL="$ADDIE_URL"
   export TAURI_ENV_DOLORES_URL="$DOLORES_URL"

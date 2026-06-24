@@ -6,7 +6,6 @@ const execPromise = util.promisify(exec);
 const MICROSERVICES = [
   'fount',
   'bdo',
-  'covenant',
   'prof',
   'addie',
   'julia',

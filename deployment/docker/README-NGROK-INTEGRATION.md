@@ -93,7 +93,6 @@ Each base exposes 12 services across a port range:
 | minnie       | 5119   | 5219   | 5319   |
 | aretha       | 5120   | 5220   | 5320   |
 | sanora       | 5121   | 5221   | 5321   |
-| covenant     | 5122   | 5222   | 5322   |
 
 ## 🛠️ URL Management
 

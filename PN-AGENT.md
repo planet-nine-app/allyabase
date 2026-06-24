@@ -20,7 +20,6 @@ The Planet Nine ecosystem is a comprehensive collection of open-source software 
 - **Sanora**: Product hosting with marketplace and teleportation endpoints
 - **Addie**: Payment processing with multi-party transaction splitting
 - **Fount**: MAGIC protocol integration and nineum currency management
-- **Covenant**: Multi-party contract management with automatic SVG generation
 - **Dolores**: Social feeds and PostWidget component system
 - **Additional Services**: Joan (recovery), Julia (P2P messaging), Minnie (email), Pref (preferences), Aretha (limited products), Continuebee (state verification)
 
@@ -28,7 +27,6 @@ The Planet Nine ecosystem is a comprehensive collection of open-source software 
 - **sessionless**: Passwordless authentication using secp256k1 keys
 - **MAGIC**: Multi-device consensus protocol for secure transactions
 - **teleportation**: Content discovery and verification across bases
-- **covenant**: Multi-party contract management with cryptographic security
 
 #### Client Applications (the-nullary)
 - **Rhapsold**: Minimalist blogging platform (flagship reference implementation)
@@ -36,7 +34,7 @@ The Planet Nine ecosystem is a comprehensive collection of open-source software 
 - **StackChat**: P2P messaging with cross-base communication
 - **MyBase**: Personal base management and content aggregation
 - **Nexus**: Web-based ecosystem portal showcasing all Planet Nine services
-- **Plus**: Covenant, Screenary, IDO This, Grocary, Viewary, Lexary, Photary, Blogary, Viewaris, Eventary, MagiCard
+- **Plus**: Screenary, IDO This, Grocary, Viewary, Lexary, Photary, Blogary, Viewaris, Eventary, MagiCard
 
 #### Browser Extensions (the-advancement)
 - Safari Extension: Complete Planet Nine integration with native cryptography
@@ -96,7 +94,7 @@ npm test
 ### Architecture Layers
 
 **Layer 1 - Backend (allyabase)**: 12+ microservices providing backend functionality
-**Layer 2 - Protocols (The Stack)**: sessionless, MAGIC, teleportation, covenant
+**Layer 2 - Protocols (The Stack)**: sessionless, MAGIC, teleportation
 **Layer 3 - Applications (the-nullary)**: 16+ cross-platform apps with SVG-first architecture
 **Layer 4 - Extensions (the-advancement)**: Privacy-focused browser extensions
 

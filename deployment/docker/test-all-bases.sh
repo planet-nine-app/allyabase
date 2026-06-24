@@ -156,9 +156,6 @@ if [ ${#FAILED_BASES[@]} -eq 0 ]; then
   if [ "$KEEP_RUNNING" = "true" ]; then
     echo ""
     echo "🏃 All bases are still running with services exposed:"
-    echo "  Base 1: julia(:5111), continuebee(:5112), pref(:5113), bdo(:5114), joan(:5115), addie(:5116), fount(:5117), dolores(:5118), minnie(:5119), aretha(:5120), sanora(:5121), covenant(:5122)"
-    echo "  Base 2: julia(:5211), continuebee(:5212), pref(:5213), bdo(:5214), joan(:5215), addie(:5216), fount(:5217), dolores(:5218), minnie(:5219), aretha(:5220), sanora(:5221), covenant(:5222)"
-    echo "  Base 3: julia(:5311), continuebee(:5312), pref(:5313), bdo(:5314), joan(:5315), addie(:5316), fount(:5317), dolores(:5318), minnie(:5319), aretha(:5320), sanora(:5321), covenant(:5322)"
     echo ""
     echo "Stop all: docker stop test-base1 test-base2 test-base3"
     echo "Remove all: docker rm test-base1 test-base2 test-base3"

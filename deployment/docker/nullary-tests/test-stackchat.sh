@@ -62,9 +62,9 @@ sleep 2
 
 pass_test "Three-screen architecture navigation validated"
 
-# Test 3: Covenant Connection Management
-start_test "Covenant Connection Management"
-echo "  🤝 Testing covenant connection creation..."
+# Test 3: Connection Management
+start_test "Connection Management"
+echo "  🤝 Testing connection creation..."
 
 # Navigate to connections screen
 simulate_click "#connections-tab" "$APP_NAME"
@@ -87,7 +87,7 @@ simulate_click "#create-connection-btn" "$APP_NAME"
 
 sleep 3
 take_screenshot "$APP_NAME" "connection_created"  
-pass_test "Covenant connection management validated"
+pass_test "Connection management validated"
 
 # Test 4: P2P Connection URL Generation
 start_test "P2P Connection URL Generation"
@@ -109,7 +109,7 @@ start_test "Connection URL Processing"
 echo "  📨 Testing incoming connection URL processing..."
 
 # Simulate receiving a connection URL from another user
-local test_connection_url="stackchat://connect?message=1234567890%3A02f899a8b2b75f68d6e6d4a8e5c9d8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1%3Ahttp%3A//localhost%3A$((3011 + PARTNER_BASE_OFFSET))&signature=test_signature&publicKey=02f899a8b2b75f68d6e6d4a8e5c9d8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1"
+local test_connection_url="stackchat://connect?message=1234567890%3A02f899a8b2b75f68d6e6d4a8e5c9d8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1&signature=test_signature&publicKey=02f899a8b2b75f68d6e6d4a8e5c9d8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1"
 
 simulate_text_input "#connection-url-input" "$test_connection_url" "$APP_NAME"
 simulate_click "#process-connection-url-btn" "$APP_NAME"
@@ -187,13 +187,13 @@ start_test "Cross-Base P2P Functionality"
 echo "  🌐 Testing cross-base P2P messaging..."
 
 # This simulates connecting to a user on a different base
-echo "    Partner base: localhost:$((3011 + PARTNER_BASE_OFFSET)) (covenant service)"
-echo "    Current base: localhost:$((3011 + PORT_OFFSET)) (covenant service)"
+echo "    Partner base offset: $PARTNER_BASE_OFFSET"
+echo "    Current base offset: $PORT_OFFSET"
 
 # Create cross-base connection
 create_test_content "$APP_NAME" "cross_base_connection" '{
-  "partner_base_url": "http://localhost:'$((3011 + PARTNER_BASE_OFFSET))'",
-  "current_base_url": "http://localhost:'$((3011 + PORT_OFFSET))'",
+  "partner_base_offset": "'$PARTNER_BASE_OFFSET'",
+  "current_base_offset": "'$PORT_OFFSET'",
   "connection_type": "cross_base_p2p"
 }'
 
@@ -262,7 +262,6 @@ if [ $test_result -eq 0 ]; then
   echo "   ✅ Three-screen architecture (Connections, Messaging, Planet Nine)"
   echo "   ✅ P2P connection mechanism with URL scheme"
   echo "   ✅ RPG-style dialog interface with space-flight animations"
-  echo "   ✅ Covenant service integration for joint BDO"
   echo "   ✅ Cross-base P2P messaging capabilities"
   echo "   ✅ Sessionless authentication and message signing"
 else

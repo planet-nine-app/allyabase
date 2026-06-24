@@ -36,12 +36,10 @@ The wiki plugin (`wiki-plugin-allyabase`) provides single-entry-point access to 
 - `/plugin/allyabase/minnie/*` → minnie:2525 (email)
 - `/plugin/allyabase/aretha/*` → aretha:7277 (tickets)
 - `/plugin/allyabase/sanora/*` → sanora:7243 (e-commerce)
-- `/plugin/allyabase/covenant/*` → covenant:3011 (contracts)
 - `/plugin/allyabase/glyphenge/*` → glyphenge:3010 (SVG rendering)
 
 **Plugin Capabilities**:
 - Service proxy routing (all HTTP methods)
-- Contract management (Covenant integration)
 - Feed management (Dolores subscriptions)
 - Inventory system (BDO-based)
 - Deployment tools
@@ -79,8 +77,7 @@ Each base includes all 14 microservices + federated wiki + glyphenge.
 8. **Sanora** (7243) - E-commerce, product management, feed generation
 9. **Dolores** (3007) - Content discovery and social feeds
 10. **Aretha** (7277) - Ticket and access management
-11. **Covenant** (3011) - Contract management with SVG visualization
-12. **Minnie** (2525) - Email service
+11. **Minnie** (2525) - Email service
 
 **Platform Services**:
 13. **Glyphenge** (3010) - Server-side SVG rendering and link tapestries
@@ -240,7 +237,6 @@ allyabase/
 │           └── server/
 │               ├── server.js         # Server initialization
 │               ├── proxy.js          # Service proxy routes
-│               ├── contracts.js      # Covenant integration
 │               ├── feeds.js          # Dolores integration
 │               ├── inventory.js      # BDO inventory system
 │               └── deployment.js     # Deployment tools
@@ -282,7 +278,7 @@ allyabase/
 - Sharon Tests: `/sharon/CLAUDE.md`
 
 **Individual Service Docs**: `/deployment/{service}/CLAUDE.md` where service is:
-- addie, aretha, bdo, continuebee, covenant, dolores
+- addie, aretha, bdo, continuebee, dolores
 - fount, joan, julia, minnie, pref, prof, sanora
 
 ## Recent Updates (November 2025)

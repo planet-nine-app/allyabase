@@ -51,7 +51,6 @@ get_service_url() {
         base1:minnie) port="5119" ;;
         base1:aretha) port="5120" ;;
         base1:sanora) port="5121" ;;
-        base1:covenant) port="5122" ;;
         
         base2:julia) port="5211" ;;
         base2:continuebee) port="5212" ;;
@@ -64,7 +63,6 @@ get_service_url() {
         base2:minnie) port="5219" ;;
         base2:aretha) port="5220" ;;
         base2:sanora) port="5221" ;;
-        base2:covenant) port="5222" ;;
         
         base3:julia) port="5311" ;;
         base3:continuebee) port="5312" ;;
@@ -77,7 +75,6 @@ get_service_url() {
         base3:minnie) port="5319" ;;
         base3:aretha) port="5320" ;;
         base3:sanora) port="5321" ;;
-        base3:covenant) port="5322" ;;
         
         *) 
             echo "ERROR: Unknown service $service for base $base_name" >&2
@@ -159,7 +156,6 @@ list_tunnels() {
         
         # Show service URLs for this base
         echo "   Services:"
-        for service in julia continuebee pref bdo joan addie fount dolores minnie aretha sanora covenant; do
             service_url=$(get_service_url "$base" "$service" 2>/dev/null)
             if [ $? -eq 0 ]; then
                 printf "     %-12s %s\n" "$service:" "$service_url"

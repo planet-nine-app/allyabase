@@ -151,38 +151,96 @@ function addDeploymentControls($item, item) {
   $item.append(deploymentDiv);
 }
 
+function showStartingUp($item, item) {
+  $item.empty();
+
+  const statusDiv = document.createElement('div');
+  statusDiv.style.cssText = 'padding: 20px; text-align: center; color: #666;';
+  statusDiv.innerHTML = `
+    <p style="font-size: 1.1em;">⏳ Allyabase services are starting up...</p>
+    <p style="font-size: 0.9em; color: #999;">This takes up to 20 seconds after the wiki restarts. The page will refresh automatically when ready.</p>
+  `;
+  $item.append(statusDiv);
+
+  // Poll until ready, then re-emit
+  const poll = setInterval(async () => {
+    try {
+      const res = await fetch('/plugin/allyabase/status');
+      const json = await res.json();
+      if (json.ready) {
+        clearInterval(poll);
+        emit($item, item);
+      }
+    } catch (e) {
+      // still starting, keep polling
+    }
+  }, 3000);
+}
+
 function emit($item, item) {
   $item.empty(item);
 
-  const gettingUserDiv = document.createElement('div');
-  gettingUserDiv.innerHTML = '<p>Getting your allyabase user, and signatures...</p>';
-  $item.append(gettingUserDiv);
-  let user;
+  // Check if services are ready before trying to connect
+  fetch('/plugin/allyabase/status')
+    .then(res => res.json())
+    .then(status => {
+      if (status.startingUp) {
+        showStartingUp($item, item);
+        return;
+      }
 
-  // Add deployment controls first (doesn't require user)
-  addDeploymentControls($item, item);
+      const gettingUserDiv = document.createElement('div');
+      gettingUserDiv.innerHTML = '<p>Getting your allyabase user, and signatures...</p>';
+      $item.append(gettingUserDiv);
 
-  getAllyabaseUser(item)
-    .then(_allyabaseUser => {
-console.log('item is now', item);
-      allyabaseUser = _allyabaseUser;
+      // Show Stripe Connect setup prompt if the host hasn't completed onboarding
+      fetch('/plugin/allyabase/get-paid')
+        .then(res => {
+          if (res.status === 204) {
+            const stripeDiv = document.createElement('div');
+            stripeDiv.style.cssText = 'margin: 16px 0; padding: 14px 16px; background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 4px; font-size: 14px;';
+            stripeDiv.innerHTML =
+              '<strong>⚠️ Stripe not connected</strong> — your allyabase host commission won\'t be collected until you complete Stripe Connect. ' +
+              'Open <code>/plugin/allyabase/setup/stripe?token=YOUR_TOKEN</code> in your browser to finish setup.';
+            $item.append(stripeDiv);
+          }
+        })
+        .catch(() => {}); // non-fatal
 
-      addExplainer();
-      addFeeds();
-      addContracts();
-      addInventory();
+      // Add deployment controls first (doesn't require user)
+      addDeploymentControls($item, item);
+
+      getAllyabaseUser(item)
+        .then(_allyabaseUser => {
+          allyabaseUser = _allyabaseUser;
+
+          addExplainer();
+          addFeeds();
+          addContracts();
+          addInventory();
+        })
+        .catch(err => console.warn('received an error emitting in contract plugin', err))
+        .finally(() => {
+          bind($item, item);
+        });
     })
-    .catch(err => console.warn('received an error emitting in contract plugin', err))
-    .finally(() => {
-console.log('finally');
-      bind($item, item);
+    .catch(() => {
+      // If status endpoint is unreachable, fall through normally
+      addDeploymentControls($item, item);
+      getAllyabaseUser(item)
+        .then(_allyabaseUser => {
+          allyabaseUser = _allyabaseUser;
+          addExplainer();
+          addFeeds();
+          addContracts();
+          addInventory();
+        })
+        .catch(err => console.warn('received an error emitting in contract plugin', err))
+        .finally(() => { bind($item, item); });
     });
 };
 
 function bind($item, item) {
-console.log('bind called');
-
-console.log('listeners added');
 };
 
 if(window) {

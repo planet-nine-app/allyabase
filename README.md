@@ -7,6 +7,26 @@ In addition to referencing a time when the internet was weirder, it is meant as 
 
 allyabase wants to be a free, open source, self-hostable alternative to whatever other bases may be out there. 
 
+### What is a HOME?
+
+HOME is an acronym: **H**ydrogen, a h**O**le (space-time), **M**ass, and **E**nergy.
+Anything that contains all four of these things — as understood by humans — is a HOME.
+
+This definition is intentionally universal.
+Freyja (our solar system) is a HOME.
+Earth is a HOME inside Freyja, so it is a *room* in Freyja.
+A room is not an acronym, but it is itself a HOME — and may contain rooms of its own.
+A cell is a HOME.
+A mitochondrion inside that cell is a room, and therefore also a HOME.
+The hierarchy goes all the way from the scale of solar systems down to the scale of organelles, with no principled stopping point in either direction.
+
+Humans can form **orgs** — any group of two or more humans linked by whatever criteria they choose — and orgs occupy HOMEs according to their own rules.
+A neighborhood association, a band, a fediverse instance, a household: all orgs, all residing in one or more HOMEs.
+
+allyabase services are designed to be deployed inside HOMEs.
+A base is itself a HOME: it is a bounded space with its own hydrogen, hole, mass, and energy.
+When multiple bases connect, they are rooms sharing a larger HOME.
+
 ### Establishing a base
 
 If you're interested in hosting an allyabase base, but are unfamiliar with hosting in general, I recommend reading [this tutorial for setting up a minecraft server][minecraft] as it contains the concepts, and might also be more familiar to folks interested in hosting software for their friends.
@@ -40,11 +60,11 @@ Because if no one is ever going to bother to make a printer that works, we can a
 
 ### Overview
 
-allyabase is a collection of **twelve core miniservices** plus one **optional service** for handling personally identifiable information (PII).
+allyabase is a collection of **eleven core miniservices** plus one **optional service** for handling personally identifiable information (PII).
 Each miniservice provides at most two main functions.
 Those functions will be discussed in brief here, with links to their API documentation.
 
-#### Core Services (12)
+#### Core Services (11)
 
 [Addie][addie]: The accountant of the miniservices. Handles splitting up transactions, and signing people up for processors.
 
@@ -53,8 +73,6 @@ Those functions will be discussed in brief here, with links to their API documen
 [BDO][bdo]: Sometimes you just need to store a Big Dumb Object. Provides persistent storage with public/private access control, short codes, and emojicodes for easy sharing.
 
 [Continuebee][continuebee]: Saves and checks client state to verify local state matches expected state.
-
-[Covenant][covenant]: Magical contract management with cryptographic security, automatic SVG visualization generation, and distributed BDO storage.
 
 [Dolores][dolores]: Saves short-form videos, and provides a tag-based categorization system for them.
 
@@ -154,7 +172,6 @@ This project would not be possible without the support and contributions of the 
 [aretha]: https://www.github.com/planet-nine-app/aretha
 [bdo]: https://www.github.com/planet-nine-app/bdo
 [continuebee]: https://www.github.com/planet-nine-app/continuebee
-[covenant]: https://www.github.com/planet-nine-app/covenant
 [dolores]: https://www.github.com/planet-nine-app/dolores
 [fount]: https://www.github.com/planet-nine-app/fount
 [joan]: https://www.github.com/planet-nine-app/joan

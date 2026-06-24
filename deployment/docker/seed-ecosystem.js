@@ -26,7 +26,6 @@ import { generateCanimusFeedBDO, sockpuppetCanimusFeed } from './examples/music/
 import { generateRoomProduct, generateRoomSVG, generateRoomHorizontalSVG, exampleRooms } from './examples/rooms/room-bdo.js';
 import { generateProfiles } from './examples/profiles/profile-generator.js';
 import { generateSampleProducts, generateBlogPosts } from './examples/products/product-generator.js';
-import { generateSampleContracts } from './examples/contracts/contract-generator.js';
 import { generateSocialPosts } from './examples/social/social-generator.js';
 import { events as exampleEvents, generateEventSVG } from './examples/events/events.js';
 import { popupPosts, generatePopupTwoButtonSVG, generateLocationViewSVG } from './examples/popups/popups.js';
@@ -104,7 +103,6 @@ const getServiceURLs = (env, baseNum) => {
       prof: 'http://localhost:3008',
       sanora: 'http://localhost:7243',
       bdo: 'http://localhost:3003',
-      covenant: 'http://localhost:3011',
       julia: 'http://localhost:3000',
       continuebee: 'http://localhost:2999',
       fount: 'http://localhost:3006',  // Fixed: was 3002, should be 3006
@@ -118,7 +116,6 @@ const getServiceURLs = (env, baseNum) => {
       prof: `http://localhost:${portBase + 23}`, // Prof service on port 5123 for Base 1
       sanora: `http://localhost:${portBase + 21}`,
       bdo: `http://localhost:${portBase + 14}`,
-      covenant: `http://localhost:${portBase + 22}`,
       julia: `http://localhost:${portBase + 11}`,
       continuebee: `http://localhost:${portBase + 12}`,
       fount: `http://localhost:${portBase + 17}`,
@@ -136,7 +133,6 @@ const getServiceURLs = (env, baseNum) => {
       prof: `${baseURL}/prof`,
       sanora: `${baseURL}/sanora`,
       bdo: `${baseURL}/bdo`,
-      covenant: `${baseURL}/covenant`,
       julia: `${baseURL}/julia`,
       continuebee: `${baseURL}/continuebee`,
       fount: `${baseURL}/fount`,
@@ -153,7 +149,6 @@ const getServiceURLs = (env, baseNum) => {
       prof: `${baseURL}/prof`,
       sanora: `${baseURL}/sanora`,
       bdo: `${baseURL}/bdo`,
-      covenant: `${baseURL}/covenant`,
       julia: `${baseURL}/julia`,
       continuebee: `${baseURL}/continuebee`,
       fount: `${baseURL}/fount`,
@@ -167,7 +162,6 @@ const getServiceURLs = (env, baseNum) => {
       prof: `https://${env}.prof.allyabase.com`,
       sanora: `https://${env}.sanora.allyabase.com`,
       bdo: `https://${env}.bdo.allyabase.com`,
-      covenant: `https://${env}.covenant.allyabase.com`,
       julia: `https://${env}.julia.allyabase.com`,
       continuebee: `https://${env}.continuebee.allyabase.com`,
       fount: `https://${env}.fount.allyabase.com`,
@@ -550,79 +544,6 @@ class DoloresSeeder {
     }
     
     return this.posts;
-  }
-}
-
-class CovenantSeeder {
-  constructor(baseURL) {
-    this.baseURL = baseURL;
-    this.contracts = [];
-  }
-
-  async createUser(seed) {
-    return await createTestUser(seed);
-  }
-
-  async createContract(user, contractData) {
-    try {
-      const timestamp = new Date().getTime();
-      const message = timestamp + user.uuid;
-      const signature = await signMessage(user.privateKey, message, user.pubKey);
-
-      // Create participant UUIDs
-      const participants = [];
-      for (let i = 0; i < contractData.participants; i++) {
-        participants.push(sessionless.generateUUID());
-      }
-
-      // Create steps with UUIDs
-      const steps = contractData.steps.map((description, index) => ({
-        id: `step-${index + 1}`,
-        description,
-        signatures: {},
-        completed: false,
-        magicSpell: null
-      }));
-
-      const response = await post(`${this.baseURL}/contract`, {
-        signature,
-        timestamp: timestamp.toString(),
-        userUUID: user.uuid,
-        pubKey: user.pubKey,
-        title: contractData.title,
-        description: contractData.description,
-        participants,
-        steps
-      });
-
-      return response;
-    } catch (error) {
-      console.error(`Failed to create contract ${contractData.title}:`, error.message);
-      return null;
-    }
-  }
-
-  async seedContracts() {
-    console.log('📜 Seeding Covenant service with contracts...');
-
-    try {
-      const user = await this.createUser('covenant-contracts-user');
-      const contractsData = generateSampleContracts();
-      
-      for (const contractData of contractsData) {
-        const contract = await this.createContract(user, contractData);
-        if (contract) {
-          this.contracts.push(contract);
-          console.log(`  ✅ Created contract: ${contractData.title}`);
-        }
-      }
-      
-      console.log(`📊 Covenant seeding complete: ${this.contracts.length} contracts created\n`);
-    } catch (error) {
-      console.error('❌ Covenant seeding failed:', error.message);
-    }
-    
-    return this.contracts;
   }
 }
 
@@ -2013,7 +1934,6 @@ const seedEcosystem = async () => {
     checkServiceHealth('Prof', SERVICES.prof),
     checkServiceHealth('Sanora', SERVICES.sanora),
     checkServiceHealth('Dolores', SERVICES.dolores),
-    checkServiceHealth('Covenant', SERVICES.covenant),
     checkServiceHealth('BDO', SERVICES.bdo),
     checkServiceHealth('Advancement', SERVICES.advancement)
   ]);
@@ -2022,9 +1942,8 @@ const seedEcosystem = async () => {
     prof: healthChecks[0],
     sanora: healthChecks[1],
     dolores: healthChecks[2],
-    covenant: healthChecks[3],
-    bdo: healthChecks[4],
-    advancement: healthChecks[5]
+    bdo: healthChecks[3],
+    advancement: healthChecks[4]
   };
 
   const healthyServices = healthChecks.filter(Boolean).length;
@@ -2059,12 +1978,6 @@ const seedEcosystem = async () => {
       seeders.push(new DoloresSeeder(SERVICES.dolores).seedPosts());
     } else {
       console.log('⚠️  Dolores service not healthy, skipping post seeding');
-    }
-
-    if (isServiceHealthy.covenant) {
-      seeders.push(new CovenantSeeder(SERVICES.covenant).seedContracts());
-    } else {
-      console.log('⚠️  Covenant service not healthy, skipping contract seeding');
     }
 
     if (isServiceHealthy.bdo) {
@@ -2167,7 +2080,6 @@ const seedEcosystem = async () => {
       serviceNames.push('Sanora Rooms');
     }
     if (isServiceHealthy.dolores) serviceNames.push('Dolores');
-    if (isServiceHealthy.covenant) serviceNames.push('Covenant');
     if (isServiceHealthy.bdo) serviceNames.push('BDO');
     if (isServiceHealthy.advancement) serviceNames.push('The Advancement');
 
@@ -2235,13 +2147,11 @@ const seedEcosystem = async () => {
       console.log(`🔗 Test Base ${BASE_NUMBER} URLs:`);
       console.log(`   BDO: ${SERVICES.bdo}`);
       console.log(`   Sanora: ${SERVICES.sanora}`);
-      console.log(`   Covenant: ${SERVICES.covenant}`);
       console.log(`   The Advancement: ${SERVICES.advancement}`);
     } else if (ENVIRONMENT === 'local') {
       console.log(`\n🔗 Local Environment URLs:`);
       console.log(`   BDO: ${SERVICES.bdo}`);
       console.log(`   Sanora: ${SERVICES.sanora}`);
-      console.log(`   Covenant: ${SERVICES.covenant}`);
       console.log(`   The Advancement: ${SERVICES.advancement}`);
     }
 

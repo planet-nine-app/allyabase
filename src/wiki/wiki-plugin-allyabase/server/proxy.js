@@ -22,7 +22,6 @@ const SERVICE_PORTS = {
   minnie: 2525,
   aretha: 7277,
   sanora: 7243,
-  covenant: 3011,
   glyphenge: 3010,
   linkitylink: 3010  // Same as glyphenge in container
 };

@@ -9,7 +9,6 @@ The seeding system creates sample data across all major Planet Nine services:
 - **Prof**: User profiles for IDothis and MyBase applications
 - **Sanora**: Products for Ninefy marketplace and blog posts for Rhapsold
 - **Dolores**: Social media posts and interactions  
-- **Covenant**: Sample magical contracts with multiple participants
 - **BDO**: Base discovery data for cross-base networking
 - **Julia**: Messages for StackChat communication (future)
 
@@ -42,7 +41,6 @@ This assumes services are running on standard ports:
 - prof: `localhost:3008` 
 - sanora: `localhost:7243`
 - bdo: `localhost:3003`
-- covenant: `localhost:3011`
 - etc.
 
 ### 3. Seed Test Environment
@@ -121,12 +119,6 @@ node seed-ecosystem.js test 3
 - Topics range from technical achievements to project updates
 - Attributed to the generated user profiles for consistency
 
-### Magical Contracts (Covenant Service)
-- **9 professional service contracts** with realistic scenarios
-- Examples: "Website Development Agreement", "Security Audit Engagement", "DevOps Infrastructure Setup"
-- Multiple participants and detailed step-by-step workflows
-- Auto-generated SVG visualizations and BDO storage integration
-
 ### Base Discovery Data (BDO Service)
 - **3 sample bases** for cross-base networking
 - "Tech Hub Base", "Creative Collective", "Business Network"
@@ -183,7 +175,6 @@ curl http://localhost:3007/health  # dolores
 curl http://localhost:3008/health  # prof  
 curl http://localhost:7243/health  # sanora
 curl http://localhost:3003/health  # bdo
-curl http://localhost:3011/health  # covenant
 ```
 
 ## Architecture
@@ -199,7 +190,6 @@ seed-ecosystem.js
 │   ├── ProfSeeder            # User profiles
 │   ├── SanoraSeeder          # Products & blog posts
 │   ├── DoloresSeeder         # Social posts
-│   ├── CovenantSeeder        # Magical contracts
 │   └── BDOSeeder             # Base discovery
 └── Health Checking           # Service availability
 ```
@@ -312,7 +302,6 @@ The seeded data is designed to work seamlessly with all Planet Nine client appli
 - **Ninefy**: Digital products marketplace with realistic inventory
 - **Rhapsold**: Blog posts for content discovery and reading
 - **StackChat**: Future message seeding for P2P communication testing
-- **Covenant**: Magical contracts for workflow and collaboration testing
 
 ## Contributing
 

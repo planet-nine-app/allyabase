@@ -1,66 +1,25 @@
 {
-  "environment": "test",
+  "environment": "dev",
   "baseNumber": "1",
-  "seedDate": "2025-12-09T19:16:11.567Z",
+  "seedDate": "2026-01-25T16:27:12.836Z",
   "emojicodedReferences": [
     {
-      "type": "Recipe",
-      "title": "Grandma's Secret Chocolate Chip Cookies Recipe",
-      "pubKey": "028470a646b67a6c61d4cde07bde867a1f020127b3bd921edd96a722ff6187ec07",
-      "emojiShortcode": "💚🌍🔑💎🌟🐺📧🎸💣",
-      "uuid": "f86c3e90-4529-447c-b2bf-35b9bc58ed1f",
-      "htmlUpdated": true
+      "type": "Canimus Feed",
+      "title": "Sockpuppet Canimus Feed",
+      "artist": "Sockpuppet",
+      "feedUrl": "https://sockpuppet.band/canimus.json",
+      "pubKey": "034af7b1e487af0e26ad179098b635d05a57cbcdf160a90498839bd471f39e51ce",
+      "emojiShortcode": "💚🌍🔑💎😄🏆🌟📌🚃",
+      "uuid": "5d48d457-5e54-443c-947c-3136c5fcdde7"
     },
     {
       "type": "Product",
       "title": "Peace Love and Redistribution T-Shirt",
       "productId": "peace-love-redistribution-tshirt",
       "price": "$29.00",
-      "pubKey": "03629499e227be805041a6b5daabd7c7af672181328dff78a266b64ee3951ba2b7",
-      "emojiShortcode": "💚🌍🔑💎🚂📝🕓🕐😃",
-      "uuid": "e25c9a4f-8200-432e-9f4d-8ffa5b443ea4"
-    },
-    {
-      "type": "Room",
-      "title": "Spacious 2BR Near Transit",
-      "beds": 2,
-      "baths": 1.5,
-      "size": 950,
-      "rent": "$650.00/mo",
-      "neighborhood": "Midtown",
-      "pubKey": "03646298a4028f2342a98dc5636936753f407ba656119fdf091c2f7189671d0542",
-      "emojiShortcode": "💚🌍🔑💎🐻🔑👕🔨🎻",
-      "uuid": "cab35e55-fb7b-45f9-a52f-c050d72749fa"
-    },
-    {
-      "type": "Room",
-      "title": "Luxury 3BR Penthouse",
-      "beds": 3,
-      "baths": 2,
-      "size": 1400,
-      "rent": "$700.00/mo",
-      "neighborhood": "Uptown",
-      "pubKey": "0360bf9a87a285d7ba9d33a5996da339a83caef984cfc67ec599dbe42c0f0bbd51",
-      "emojiShortcode": "💚🌍🔑💎💎📢🔥🐳🐢",
-      "uuid": "6d3fa8d2-36bd-45b9-abc9-bd2cfd05eab4"
-    },
-    {
-      "type": "Contract Signing UI",
-      "title": "Website Development Agreement",
-      "contractId": "website-dev-001",
-      "participants": 2,
-      "pubKey": "03e75104b744272754620daddea11c4edb462c50db2dbd79588872e62130700a0c",
-      "emojiShortcode": "💚🌍🔑💎🐉🏆🎨👕📌",
-      "uuid": "c17ca5a7-c5e8-4eb2-b279-b73fd843da62"
-    },
-    {
-      "type": "Canimus Feed",
-      "title": "Sockpuppet Canimus Feed",
-      "artist": "Sockpuppet",
-      "feedUrl": "https://sockpuppet.band/canimus.json",
-      "pubKey": "025b7509671956f2b0e09dea28ba485addb5150656f5991d08b5881a5db5d86416",
-      "emojiShortcode": "💚🌍🔑💎🔪🌍🌙🎲👒",
-      "uuid": "5b92b431-3d42-4844-bd51-23ac13893e11"
+      "pubKey": "02a0d4b217d0cff02e1b847dbbfcf36d3b084c7196386df1c256b9930cc417f76d",
+      "emojiShortcode": "💚🌍🔑💎🎨🕔📕💣🔥",
+      "uuid": "51213777-6af1-4fab-8124-1bcae027aeb1"
     },
     {
       "type": "Room",
@@ -70,19 +29,33 @@
       "size": 650,
       "rent": "$550.00/mo",
       "neighborhood": "Downtown",
-      "pubKey": "02f93b9e8b43ee513573ee755e308ca61200e03232abc36af24ff300d737d24808",
-      "emojiShortcode": "💚🌍🔑💎🌟📘📧🏹🔓",
-      "uuid": "c953e364-350d-402e-a63b-424ad5635c54"
+      "pubKey": "02412f0cfe32e3a1483f18e9e1d4da457691920e1614d985676fba59537f7f5dd2",
+      "emojiShortcode": "💚🌍🔑💎😀🐚🎹🐳💣",
+      "uuid": "57c67c29-bbed-4d02-8fcb-2d55e2004d64"
     },
     {
-      "type": "Book",
-      "title": "The Quiet Revolution: Finding Peace in a Noisy World",
-      "author": "Marcus Williams",
-      "price": "$24.99",
-      "category": "self-help",
-      "pubKey": "03b2c9802906e465db920bb0b582ad5606951dff2a8a80501cc76940b01a9247c3",
-      "emojiShortcode": "💚🌍🔑💎👒🌟🔓🌙📐",
-      "uuid": "8e58ada1-255f-4061-8574-56550101deef"
+      "type": "Room",
+      "title": "Luxury 3BR Penthouse",
+      "beds": 3,
+      "baths": 2,
+      "size": 1400,
+      "rent": "$700.00/mo",
+      "neighborhood": "Uptown",
+      "pubKey": "03fe1b33459d040b980ccec7eaba745a8175c3e71718f7b4e27f84639dafa8b79f",
+      "emojiShortcode": "💚🌍🔑💎🔩📧🕒🕔📍",
+      "uuid": "a0b679f3-f72d-4618-974b-ba7594ab9df5"
+    },
+    {
+      "type": "Room",
+      "title": "Spacious 2BR Near Transit",
+      "beds": 2,
+      "baths": 1.5,
+      "size": 950,
+      "rent": "$650.00/mo",
+      "neighborhood": "Midtown",
+      "pubKey": "0258c5f5c936a65dc8ee85923bce26b19dd0867b81a2be390735e6de5e7720c227",
+      "emojiShortcode": "💚🌍🔑💎🐚🚃🔥🏆💀",
+      "uuid": "2c59487c-86d1-44c3-a7e8-f989c0d24d29"
     },
     {
       "type": "Book",
@@ -90,40 +63,46 @@
       "author": "Sarah Chen",
       "price": "$19.99",
       "category": "technology",
-      "pubKey": "03c153acd9d456b57d5662c8fd37791b4e66b97b192611f2d71d99ef746027fef4",
-      "emojiShortcode": "💚🌍🔑💎🌊🌟📑🔨📚",
-      "uuid": "09da33e4-ffc6-4e23-bf2a-2e3b729c9aa4"
+      "pubKey": "028a6af2f57dc2c063623a18acf0571de763cfe1b55f262a3fdcca21d32b0e10e3",
+      "emojiShortcode": "💚🌍🔑💎🎯🚃🎸📝🎭",
+      "uuid": "ee90ee62-471e-4f3b-8d48-1be777ea4b51"
     },
     {
-      "type": "Video Game",
-      "title": "Stardew Valley",
-      "gameType": "video-game",
-      "designer": "ConcernedApe (Eric Barone)",
-      "price": "$14.99",
-      "category": "simulation",
-      "pubKey": "03852057fac07c57a2d4a4bc2fe814d00463e8086bcd135e843319b64b02b7ec8f",
-      "emojiShortcode": "💚🌍🔑💎📣📘🎭🌙💀",
-      "uuid": "9231dbbf-24f9-4e2f-b9d8-c916c0a24092"
+      "type": "Book",
+      "title": "The Quiet Revolution: Finding Peace in a Noisy World",
+      "author": "Marcus Williams",
+      "price": "$24.99",
+      "category": "self-help",
+      "pubKey": "028671c8e4641490d8c7e18efed306dcccb090c41a2882a6de0b1954246148851b",
+      "emojiShortcode": "💚🌍🔑💎📬📧🕐🔨📚",
+      "uuid": "74ebfd4d-4667-45a9-a712-edd6b038f471"
+    },
+    {
+      "type": "Contract Signing UI",
+      "title": "Website Development Agreement",
+      "contractId": "website-dev-001",
+      "participants": 2,
+      "pubKey": "02cbbf7fc5cb32e1ef8e41f74ab653b6bc18dd5a144b6e5fc0b417ad17698fed93",
+      "emojiShortcode": "💚🌍🔑💎📦📝📢📑🐙",
+      "uuid": "a934e2c6-5ed6-4d1c-9af6-b559c0fb2705"
+    },
+    {
+      "type": "Recipe",
+      "title": "Grandma's Secret Chocolate Chip Cookies Recipe",
+      "pubKey": "03d985fb046d0fc583e8e4aaed02fa7db6f867eec273a7e0d0ed0e7c46fe9c2173",
+      "emojiShortcode": "💚🌍🔑💎👓📮🐳📨🐚",
+      "uuid": "f88170bd-8be8-4fd5-9e7d-d2de21552368",
+      "htmlUpdated": true
     },
     {
       "type": "FTP",
       "title": "FTP",
       "gameType": "ftp",
-      "designer": "Minnesota Vikings",
+      "designer": "Chicago Bears",
       "price": "$NaN",
-      "pubKey": "03ba5734faf58d6fa3583da43748a85b65c2011c384f8a7f3204f53ad930959ee3",
-      "emojiShortcode": "💚🌍🔑💎🔓🚁🕔📝😁",
-      "uuid": "f00992cb-8fab-46c3-b50a-243b6fe825d0"
-    },
-    {
-      "type": "Book",
-      "title": "Code as Poetry: The Art of Elegant Programming",
-      "author": "Elena Rodriguez",
-      "price": "Free",
-      "category": "programming",
-      "pubKey": "0215ce1c23f943c83027b36f34c3889dd6a7a337dade7e444e480e8aafbd28d586",
-      "emojiShortcode": "💚🌍🔑💎👔🚂💎🌟🐢",
-      "uuid": "f096f535-bdb7-4d00-8afa-920cec8c6777"
+      "pubKey": "02eb53542649c8ce59dbab09c707dd785d2b207c66eedfd12749a3f54f166e6de4",
+      "emojiShortcode": "💚🌍🔑💎🎪📑🌟👒🌙",
+      "uuid": "9bed755d-d871-439d-83f0-ce5c6b02e583"
     },
     {
       "type": "Video Game",
@@ -132,83 +111,9 @@
       "designer": "Nintendo EPD",
       "price": "$59.99",
       "category": "action-adventure",
-      "pubKey": "031bb540aff682f790b56adffe13412ba156f2c2934ff19bbd08503582b8460e7a",
-      "emojiShortcode": "💚🌍🔑💎🔱📌🐙🐳🐞",
-      "uuid": "caac2f47-02fd-4e4c-84fb-1a71043bcfa5"
-    },
-    {
-      "type": "FTP",
-      "title": "FTP",
-      "gameType": "ftp",
-      "designer": "Detroit Lions",
-      "price": "$NaN",
-      "pubKey": "03c753fda4edbe03d83b49fda0f68f139788029ff59cd0c9111203419a9ac3f83a",
-      "emojiShortcode": "💚🌍🔑💎🚆🚄📚🎭🌍",
-      "uuid": "36aea6b1-7b8c-438d-af3e-7e6a1f5d87d3"
-    },
-    {
-      "type": "Board Game",
-      "title": "Wingspan",
-      "gameType": "board-game",
-      "designer": "Elizabeth Hargrave",
-      "price": "$59.99",
-      "category": "strategy",
-      "pubKey": "03f186081a26888ed3b134ce621c6ee2094c189fbb203698880b9a162ba6e8fa0c",
-      "emojiShortcode": "💚🌍🔑💎🔔📮😀🔮📡",
-      "uuid": "fd519b4a-3847-4518-85e0-423b2afd0515"
-    },
-    {
-      "type": "Service Provider",
-      "title": "Sarah's Childcare",
-      "serviceType": "childcare",
-      "provider": "Sarah Chen",
-      "rate": "$25.00/hr",
-      "rating": "5 ⭐ (89 reviews)",
-      "category": "childcare",
-      "pubKey": "02d86a457b71ac341e3ed97e87c583ef7a7a9b988761d98043cbfe4d68e38efc30",
-      "emojiShortcode": "💚🌍🔑💎🐞🎺📡😄🐳",
-      "uuid": "3e1487fe-581c-48b8-a870-9249bc84c168"
-    },
-    {
-      "type": "FTP",
-      "title": "FTP",
-      "gameType": "ftp",
-      "designer": "Chicago Bears",
-      "price": "$NaN",
-      "pubKey": "0325a0982302eeb1829ab57c44cc1fc7b5d1812b0b1c1e6f8a18f5ce352c1aa262",
-      "emojiShortcode": "💚🌍🔑💎🔪🔮🙃🌟🏔",
-      "uuid": "ff77d69d-c795-41cb-b463-8547d11dd85b"
-    },
-    {
-      "type": "FTP",
-      "title": "FTP",
-      "gameType": "ftp",
-      "designer": "Green Bay Packers",
-      "price": "$NaN",
-      "pubKey": "035ab2940bd653652cbfd3ccac1129111ca42109c34960be5c0654160db1cfbb77",
-      "emojiShortcode": "💚🌍🔑💎🎲🚀🎸🔩📌",
-      "uuid": "374bfe03-182c-4db0-ac67-6cebb7895c47"
-    },
-    {
-      "type": "Board Game",
-      "title": "Settlers of Catan",
-      "gameType": "board-game",
-      "designer": "Klaus Teuber",
-      "price": "$44.99",
-      "category": "strategy",
-      "pubKey": "0379637fd8f50c9e10962b5e41c70ed12cff2837cfe66383cda8ce41d7c7878844",
-      "emojiShortcode": "💚🌍🔑💎🎸🏆💼🔑📑",
-      "uuid": "78c3549c-9529-424a-b1ac-f8dbb2521e8b"
-    },
-    {
-      "type": "Article",
-      "title": "If I Write Another Word",
-      "author": "From Medium/Illumination",
-      "price": "Free (Article)",
-      "category": "writing",
-      "pubKey": "0343d74ebccf81fbc5ba31e78090f16c16188d9f4fe55725792902d7c1f52f95c0",
-      "emojiShortcode": "💚🌍🔑💎🎲🕖🎻🎹🏺",
-      "uuid": "94187df6-a66b-4305-96e5-2f652dd12f7f"
+      "pubKey": "03b488a875ea6ae9415cc0c9bd05f91b71bc88005a301646f71b14c8f400d2fb8d",
+      "emojiShortcode": "💚🌍🔑💎🕒🎭🏆🐙🐺",
+      "uuid": "3520ee97-e55f-47a8-9afc-0aad7e6f1134"
     },
     {
       "type": "Service Provider",
@@ -218,9 +123,104 @@
       "rate": "$85.00/hr",
       "rating": "4.9 ⭐ (247 reviews)",
       "category": "home-services",
-      "pubKey": "035c2013a3716afc69862ae95fece7e9ef5f3146a8ca397de10e74852cb2e354e0",
-      "emojiShortcode": "💚🌍🔑💎🐉😂📬💼🚀",
-      "uuid": "714a528e-de70-4d65-8bf4-a49c6b39060c"
+      "pubKey": "02e73ae6af95e0954285517a6d66b4da5ba12fa48a0b5d002cf7548d1f24a100aa",
+      "emojiShortcode": "💚🌍🔑💎🔓🎻🚂🕓🐉",
+      "uuid": "e8ae2e93-1e1b-41af-ba82-63aa3bb5002a"
+    },
+    {
+      "type": "FTP",
+      "title": "FTP",
+      "gameType": "ftp",
+      "designer": "Detroit Lions",
+      "price": "$NaN",
+      "pubKey": "02ead162e2112d19261b4ce10f1970ec6c77ca1dee63ae8b4c2fb8636a0fa9a5d3",
+      "emojiShortcode": "💚🌍🔑💎🎻📑🌟🏺🏹",
+      "uuid": "5d4cbcf1-6f98-4534-b49e-6b5f29caa20a"
+    },
+    {
+      "type": "Video Game",
+      "title": "Stardew Valley",
+      "gameType": "video-game",
+      "designer": "ConcernedApe (Eric Barone)",
+      "price": "$14.99",
+      "category": "simulation",
+      "pubKey": "02e3b892281852c3cc76f59ce2a9e372d3013481627fd4d3c29c0ff3c7817f6144",
+      "emojiShortcode": "💚🌍🔑💎🕖🚄🕔🏰🕐",
+      "uuid": "7a2c481d-5759-4710-b476-b820526f1bf2"
+    },
+    {
+      "type": "Board Game",
+      "title": "Settlers of Catan",
+      "gameType": "board-game",
+      "designer": "Klaus Teuber",
+      "price": "$44.99",
+      "category": "strategy",
+      "pubKey": "038feb94e889fcb0bcc9918e9da4ab74925ba6c9f049f87645d32fec55e1aa30f2",
+      "emojiShortcode": "💚🌍🔑💎🚀🙂🔔🔪📝",
+      "uuid": "6c8434ce-bcc4-4709-8ee4-be5eb0bdb621"
+    },
+    {
+      "type": "FTP",
+      "title": "FTP",
+      "gameType": "ftp",
+      "designer": "Minnesota Vikings",
+      "price": "$NaN",
+      "pubKey": "03a38547daddd322bc704d5ea49ef9dfb2e5a1af1c5d5618d45fd131850d28a82c",
+      "emojiShortcode": "💚🌍🔑💎🌟🔱📣💫🌙",
+      "uuid": "7c3efe4b-6a38-4df3-bbe0-cafec5b54440"
+    },
+    {
+      "type": "Board Game",
+      "title": "Wingspan",
+      "gameType": "board-game",
+      "designer": "Elizabeth Hargrave",
+      "price": "$59.99",
+      "category": "strategy",
+      "pubKey": "0231488a353d004656390f289d8788a57853ef5b49f0366f5711f5807266b9f79e",
+      "emojiShortcode": "💚🌍🔑💎🗡🕕🚁😅🙂",
+      "uuid": "7e77cfcb-6757-4e03-abb1-277760443470"
+    },
+    {
+      "type": "Service Provider",
+      "title": "Sarah's Childcare",
+      "serviceType": "childcare",
+      "provider": "Sarah Chen",
+      "rate": "$25.00/hr",
+      "rating": "5 ⭐ (89 reviews)",
+      "category": "childcare",
+      "pubKey": "02cc1d31de5cfe62428d18d673bddb48e45c0ecd63945b2b195a6a4ae7e41dbe2d",
+      "emojiShortcode": "💚🌍🔑💎🙄👕📦🐞🌊",
+      "uuid": "cc6cd213-df16-4ca0-a1e7-2bd6c8860bf4"
+    },
+    {
+      "type": "FTP",
+      "title": "FTP",
+      "gameType": "ftp",
+      "designer": "Green Bay Packers",
+      "price": "$NaN",
+      "pubKey": "03628bc4727e5fa112c965167f2a7ed9669011fa171573623821a80459869d9a76",
+      "emojiShortcode": "💚🌍🔑💎🏰🏆📎💣🌍",
+      "uuid": "c31f0c86-4943-411a-80f7-7028e895acec"
+    },
+    {
+      "type": "Book",
+      "title": "Code as Poetry: The Art of Elegant Programming",
+      "author": "Elena Rodriguez",
+      "price": "Free",
+      "category": "programming",
+      "pubKey": "0240f10f832c8f04b6f7704795fd17f595945f21e49c5ea481639082721f129820",
+      "emojiShortcode": "💚🌍🔑💎🔓🙂🎸🔔📡",
+      "uuid": "b2d63a64-b1f0-49d5-9b4f-dc904f50768b"
+    },
+    {
+      "type": "Article",
+      "title": "If I Write Another Word",
+      "author": "From Medium/Illumination",
+      "price": "Free (Article)",
+      "category": "writing",
+      "pubKey": "02437b40343a08ba17f7c4db5c171da8b017e5eca34b210f3bdbea5eb35d592eb4",
+      "emojiShortcode": "💚🌍🔑💎🔓📌👑💼💎",
+      "uuid": "e3866501-07ed-4ca0-ade0-c2f3c2894289"
     },
     {
       "type": "Popup Post",
@@ -228,23 +228,11 @@
       "location": "Cartlandia Food Cart Pod, SE 82nd Ave & Foster Rd, Portland, OR 97266",
       "date": "12/3/2025",
       "category": "food-drink",
-      "pubKey": "02cf40850664d9c5d56e0040660e68fc2b34ec4046eae768e62f2dc3dd12e66c5f",
-      "emojiShortcode": "💚🌍🔑💎📚🕙🔫📮📝",
-      "locationViewPubKey": "025a7a8dfd056c976be5dd6728c7229954694f5630b3fcd72d992889e25c28a870",
-      "locationEmojiShortcode": "💚🌍🔑💎🎨📘🌟👒🎸",
-      "uuid": "f1b4e7ad-b585-4f46-a46a-3f1c575dca6a"
-    },
-    {
-      "type": "Popup Post",
-      "title": "Coffee & Code Meetup",
-      "location": "Stumptown Coffee Roasters, 128 SW 3rd Ave, Portland, OR 97204",
-      "date": "11/15/2025",
-      "category": "tech-meetup",
-      "pubKey": "03ff867f0ec8c144554f05aaf782fcbf45e5875a89c962aff9eda785128f80cbf1",
-      "emojiShortcode": "💚🌍🔑💎💣📚🗡🐢💎",
-      "locationViewPubKey": "037e8697d9a661013b756a0c14bffbea6febe23fd99d528ece1a47059bf8baca71",
-      "locationEmojiShortcode": "💚🌍🔑💎📬🔨🚁💀🎪",
-      "uuid": "a015eb70-b8ef-4d0d-8826-d516ed5cc250"
+      "pubKey": "03a04ef0098d6ab583fad6f57fa5247f03459cb145831a0fb0c24ad11b6010fbab",
+      "emojiShortcode": "💚🌍🔑💎🎲🎹📑🏹🔑",
+      "locationViewPubKey": "0359fa1d97bacd7bf632b00db1acc55fd54b3bd7c9fb2947d59eb2db5478193cd8",
+      "locationEmojiShortcode": "💚🌍🔑💎🕔👒💣👔🐢",
+      "uuid": "94406a40-b3ae-4420-90a5-e6f81423b530"
     },
     {
       "type": "Popup Post",
@@ -252,11 +240,23 @@
       "location": "Pearl District Art Hub, 1000 NW Lovejoy St, Portland, OR 97209",
       "date": "11/22/2025",
       "category": "art-culture",
-      "pubKey": "0245700a83b2c48437ca51e9f98e7ca365d06dc84dee11d3b6c2ca0ec5d6e365bd",
-      "emojiShortcode": "💚🌍🔑💎📡📐📬🐢🕓",
-      "locationViewPubKey": "0245a56f0df6e017ea4a804b6160497a4c3886fc73c63e12fe7471283356f1be2b",
-      "locationEmojiShortcode": "💚🌍🔑💎🌍🔒🗿🔩😁",
-      "uuid": "d6fa39f5-608b-453d-8321-b9bddeee8467"
+      "pubKey": "036faa3e96eb1ba27a3a4eca524324ade01a72f3456a863387fc57070a525c24d1",
+      "emojiShortcode": "💚🌍🔑💎📙🗿💣🏆🌊",
+      "locationViewPubKey": "0288e787664b068dcdf7f328276147cb268a0a1c5c0eadbb717c329b3063419cc9",
+      "locationEmojiShortcode": "💚🌍🔑💎🌟🎨🎪📑📡",
+      "uuid": "bffcff83-6831-4890-8262-174c3d11764e"
+    },
+    {
+      "type": "Popup Post",
+      "title": "Coffee & Code Meetup",
+      "location": "Stumptown Coffee Roasters, 128 SW 3rd Ave, Portland, OR 97204",
+      "date": "11/15/2025",
+      "category": "tech-meetup",
+      "pubKey": "036fd2c0113b712021b14127c78d892b6ae1177d2abc70e2a3293b5b43516e3bbc",
+      "emojiShortcode": "💚🌍🔑💎🐉📦🕘📣🌊",
+      "locationViewPubKey": "02a968c803dc037e6cec75ad451b13d03ac4da24163502cded6edb0c14728b5505",
+      "locationEmojiShortcode": "💚🌍🔑💎🐝🔨😃🚂💀",
+      "uuid": "8a1ce336-6ac7-49a4-9b76-2cfd97f7e313"
     },
     {
       "type": "Event",
@@ -266,25 +266,11 @@
       "ticketPrice": "$75.00",
       "capacity": 50,
       "ticketFlavor": "AB01CD02EF03",
-      "pubKey": "02e13782ce36ac390db136edbf47707678e7451da7ac3340207c113f4ca8ba1715",
-      "emojiShortcode": "💚🌍🔑💎🐚🗝💼🕖🕗",
-      "uuid": "e32be3da-eb87-4f14-afa3-69e28c2d7964",
-      "arethaUUID": "dca9a241-0d3c-40d3-94ef-da62852ecf6b",
+      "pubKey": "037d9e00f7acf1607f1b3b7e045248c52258f2a00eb392fcba25628901eafd8f09",
+      "emojiShortcode": "💚🌍🔑💎🕘📎🎭🎺🌊",
+      "uuid": "9b6d8804-a345-4c81-8508-5c8d7a44071f",
+      "arethaUUID": "32638bc8-1bc9-4b7b-8c6a-06a4f2a64c57",
       "ticketsAllocated": 50
-    },
-    {
-      "type": "Event",
-      "title": "Starlight Symphony Under the Stars",
-      "date": "Jul 22, 2025, 1:00 PM",
-      "location": "Pioneer Courthouse Square, Portland, OR",
-      "ticketPrice": "$35.00",
-      "capacity": 1000,
-      "ticketFlavor": "CD01EF02GH03",
-      "pubKey": "033dc75dfeac6fc9808ddc9424c7a02b064f0f6f93fb7b7d483a3f6942ed61fe67",
-      "emojiShortcode": "💚🌍🔑💎📨💎🐝🎭🎹",
-      "uuid": "607bf6ad-e9a5-4cd3-ad0e-91b92a942afd",
-      "arethaUUID": "e60fa82c-2df0-404a-9c63-e047d5bfdc38",
-      "ticketsAllocated": 1000
     },
     {
       "type": "Event",
@@ -294,23 +280,36 @@
       "ticketPrice": "500 MP",
       "capacity": 260,
       "ticketFlavor": "EF01GH02IJ03",
-      "pubKey": "03810220c6dce128fd3a613b6f8433d80124b28db352211fc0ac9a654e8b967792",
-      "emojiShortcode": "💚🌍🔑💎🚅🏆🐚📘🏔",
-      "uuid": "a32a59da-23f2-4288-b029-cbb123852f90",
-      "arethaUUID": "45f0937a-3cb4-49a2-8d6c-ca789d1644ea",
+      "pubKey": "023638ad7558062f3905ab892adbe1074dab1946e808b6affc0375083882ea939b",
+      "emojiShortcode": "💚🌍🔑💎📨📌🎻🎭📐",
+      "uuid": "ac53a29c-dc6c-4865-89ab-91788af0fcb1",
+      "arethaUUID": "ce2a5133-5a71-4dd6-ae66-ce49b1818d6e",
       "ticketsAllocated": 260
+    },
+    {
+      "type": "Event",
+      "title": "Starlight Symphony Under the Stars",
+      "date": "Jul 22, 2025, 1:00 PM",
+      "location": "Pioneer Courthouse Square, Portland, OR",
+      "ticketPrice": "$35.00",
+      "capacity": 1000,
+      "ticketFlavor": "CD01EF02GH03",
+      "pubKey": "023cae5b44b4607c7eb0f6e7f6ddce26844d3805f77ce951b234de91d5d35d1a06",
+      "emojiShortcode": "💚🌍🔑💎📚🔱🕒🚂📝",
+      "uuid": "7681c50f-76d0-4c58-bd81-689387f5081a",
+      "arethaUUID": "7ef1bd96-a813-418d-9c61-15e2198fc99c",
+      "ticketsAllocated": 1000
     }
   ],
   "services": {
-    "dolores": "http://localhost:5118",
-    "prof": "http://localhost:5123",
-    "sanora": "http://localhost:5121",
-    "bdo": "http://localhost:5114",
-    "covenant": "http://localhost:5122",
-    "julia": "http://localhost:5111",
-    "continuebee": "http://localhost:5112",
-    "fount": "http://localhost:5117",
-    "aretha": "http://localhost:5120",
-    "advancement": "http://localhost:3456"
+    "dolores": "https://dev.dolores.allyabase.com",
+    "prof": "https://dev.prof.allyabase.com",
+    "sanora": "https://dev.sanora.allyabase.com",
+    "bdo": "https://dev.bdo.allyabase.com",
+    "julia": "https://dev.julia.allyabase.com",
+    "continuebee": "https://dev.continuebee.allyabase.com",
+    "fount": "https://dev.fount.allyabase.com",
+    "aretha": "https://dev.aretha.allyabase.com",
+    "advancement": "https://dev.advancement.allyabase.com"
   }
 }

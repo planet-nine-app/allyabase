@@ -23,7 +23,6 @@ This directory contains Docker configurations and scripts for running multiple a
 | addie        | 3005    | 4005      | 5005      | 6005      |
 | fount        | 3006    | 4006      | 5006      | 6006      |
 | dolores      | 3007    | 4007      | 5007      | 6007      |
-| covenant     | 3011    | 4011      | 5011      | 6011      |
 | minnie       | 2525    | 3525      | 4525      | 5525      |
 | aretha       | 7277    | 8277      | 9277      | 10277     |
 | sanora       | 7243    | 8243      | 9243      | 10243     |
@@ -100,11 +99,6 @@ docker logs allyabase-base3
 ### With StackChat P2P Testing
 The three bases enable testing StackChat's P2P connection mechanism:
 
-- **Base 1 Covenant**: http://localhost:4011
-- **Base 2 Covenant**: http://localhost:5011  
-- **Base 3 Covenant**: http://localhost:6011
-
-Users on different bases can establish P2P connections through their respective covenant services.
 
 ### With Nullary Applications
 Each Nullary app can be configured to connect to different bases:
@@ -115,7 +109,6 @@ const base1Config = {
   bdo: 'http://localhost:4003',
   fount: 'http://localhost:4006',
   sanora: 'http://localhost:8243',
-  covenant: 'http://localhost:4011'
 };
 
 // Connect to Base 2  
@@ -123,7 +116,6 @@ const base2Config = {
   bdo: 'http://localhost:5003',
   fount: 'http://localhost:5006', 
   sanora: 'http://localhost:9243',
-  covenant: 'http://localhost:5011'
 };
 
 // Connect to Base 3
@@ -131,7 +123,6 @@ const base3Config = {
   bdo: 'http://localhost:6003',
   fount: 'http://localhost:5006',
   sanora: 'http://localhost:10243', 
-  covenant: 'http://localhost:6011'
 };
 ```
 

@@ -14,7 +14,6 @@ docker run -d \
   -p 4005:4005 \
   -p 4006:4006 \
   -p 4007:4007 \
-  -p 4011:4011 \
   -p 4525:4525 \
   -p 8277:8277 \
   -p 8243:8243 \
@@ -30,7 +29,6 @@ echo "  joan: http://localhost:4004"
 echo "  addie: http://localhost:4005"
 echo "  fount: http://localhost:4006"
 echo "  dolores: http://localhost:4007"
-echo "  covenant: http://localhost:4011"
 echo "  minnie: http://localhost:4525"
 echo "  aretha: http://localhost:8277"
 echo "  sanora: http://localhost:8243"
