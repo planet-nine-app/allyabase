@@ -15,6 +15,7 @@ services=(
     'bdo'
     'continuebee'
     'dolores'
+    'eumachia'
     'fount'
     'joan'
     'julia'

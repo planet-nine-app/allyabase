@@ -1,0 +1,19 @@
+[build]
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+  # jsdom (pulled in transitively by bdo.js's teleportation-js import, used to
+  # strip JS from user-submitted HTML) loads a worker script
+  # (xhr-sync-worker.js) from disk at runtime rather than via a traceable
+  # import, so esbuild can't bundle it - ship it unbundled from node_modules
+  # instead, which is the standard fix for this known jsdom+esbuild issue.
+  external_node_modules = ["jsdom"]
+
+# All 11 bundled services are dispatched by path prefix inside gateway.js's
+# own Express instance (see services.js) - forward every request to the one
+# function that wraps it with serverless-http.
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/gateway/:splat"
+  status = 200
