@@ -1,0 +1,36 @@
+[submodule "deployment/addie"]
+	path = deployment/addie
+	url = https://github.com/planet-nine-app/addie
+[submodule "deployment/aretha"]
+	path = deployment/aretha
+	url = https://github.com/planet-nine-app/aretha
+[submodule "deployment/bdo"]
+	path = deployment/bdo
+	url = https://github.com/planet-nine-app/bdo
+[submodule "deployment/continuebee"]
+	path = deployment/continuebee
+	url = https://github.com/planet-nine-app/continuebee
+[submodule "deployment/dolores"]
+	path = deployment/dolores
+	url = https://github.com/planet-nine-app/dolores
+[submodule "deployment/fount"]
+	path = deployment/fount
+	url = https://github.com/planet-nine-app/fount
+[submodule "deployment/joan"]
+	path = deployment/joan
+	url = https://github.com/planet-nine-app/joan
+[submodule "deployment/julia"]
+	path = deployment/julia
+	url = https://github.com/planet-nine-app/julia
+[submodule "deployment/minnie"]
+	path = deployment/minnie
+	url = https://github.com/planet-nine-app/minnie
+[submodule "deployment/pref"]
+	path = deployment/pref
+	url = https://github.com/planet-nine-app/pref
+[submodule "deployment/prof"]
+	path = deployment/prof
+	url = https://github.com/planet-nine-app/prof
+[submodule "deployment/sanora"]
+	path = deployment/sanora
+	url = https://github.com/planet-nine-app/sanora
